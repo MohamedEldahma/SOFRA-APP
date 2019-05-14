@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.frgment.resturant.ResturantRegisterFirstkFragment">
+
+    <EditText
+        android:id="@+id/name_resturant"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_50"
+        android:background="@drawable/ic_background_white"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_20"
+        android:hint="@string/string_returant_name"
+        android:inputType="textPersonName"
+        android:padding="@dimen/album_dp_10"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_50"
+        android:background="@drawable/ic_background_white"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:orientation="horizontal">
+        <Spinner
+            android:id="@+id/resturant_spiner_city"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/resturant_text_spin_city"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/string_city"
+            android:padding="@dimen/album_dp_10" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_50"
+        android:background="@drawable/ic_background_white"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/resturant_spiner_destrict"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/resturant_text_spin_destrict"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/string_adress"
+            android:padding="@dimen/album_dp_10" />
+
+    </LinearLayout>
+    <EditText
+        android:id="@+id/email_resturant"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_50"
+        android:background="@drawable/ic_background_white"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:padding="@dimen/album_dp_10"
+        android:hint="@string/string_email"
+        android:inputType="textEmailAddress"
+
+        />
+
+    <EditText
+        android:id="@+id/password_resturant"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_50"
+        android:background="@drawable/ic_background_white"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:hint="@string/string_password"
+        android:inputType="textPassword"
+        android:padding="@dimen/album_dp_10"
+        android:textAlignment="textEnd"
+        />
+    <EditText
+        android:id="@+id/confirm_password_resturant"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_50"
+        android:background="@drawable/ic_background_white"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:padding="@dimen/album_dp_10"
+        android:hint="@string/string_confirmpassword"
+        android:inputType="textPassword"
+        android:textAlignment="textEnd"
+
+        />
+    <Button
+        android:id="@+id/register1_resturant"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_50"
+        android:background="@color/colorgreen"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_50"
+        android:text="@string/string_continu"
+
+
+        />
+
+</LinearLayout>

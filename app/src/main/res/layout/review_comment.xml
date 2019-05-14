@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background_white"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/review_resturant"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/album_sp_20"
+        />
+    <RatingBar
+        android:id="@+id/rting_coment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/album_dp_6"
+        android:layout_marginTop="@dimen/album_dp_6"
+        android:layout_marginStart="@dimen/album_dp_6"
+        android:layout_alignParentEnd="true"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:progressTint="@color/coloryellow"
+        android:rating="3"
+        android:stepSize="1"
+        android:layout_marginBottom="@dimen/album_dp_4"
+        android:layout_gravity="center" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_comment"
+        android:layout_gravity="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/album_sp_20"
+
+        />
+    <TextView
+        android:id="@+id/add_comment"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_200"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_background_white"
+        android:layout_marginStart="@dimen/album_dp_10"
+        android:layout_marginEnd="@dimen/album_dp_10"
+        android:hint="@string/string_rest_coment"
+        />
+    <Button
+        android:id="@+id/btt_addcomment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_backgroun_yellow"
+        android:text="@string/btt_add"
+        android:layout_marginStart="@dimen/album_dp_10"
+        android:layout_marginEnd="@dimen/album_dp_10"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/album_sp_20"
+        />
+
+
+
+</LinearLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.frgment.resturant.offers.AddNewOfferResturantFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/add_offer_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/album_dp_50"
+                android:layout_marginTop="@dimen/album_sp_20"
+                android:background="@drawable/ic_background_white"
+                android:gravity="center_vertical"
+                android:hint="@string/offers_name"
+                android:inputType="text"
+                android:paddingEnd="@dimen/album_dp_20"
+                android:layout_marginStart="@dimen/album_dp_20"
+                android:layout_marginEnd="@dimen/album_dp_20"
+                />
+
+
+            <EditText
+                android:id="@+id/add_offer_decrip"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_below="@+id/add_offer_name"
+                android:layout_marginTop="@dimen/album_dp_20"
+                android:background="@drawable/ic_background_white"
+                android:gravity="top"
+                android:hint="@string/product_decription"
+                android:inputType="text"
+                android:paddingTop="8dp"
+                android:paddingEnd="@dimen/album_dp_20"
+                android:layout_marginStart="@dimen/album_dp_20"
+                android:layout_marginEnd="@dimen/album_dp_20"
+                />
+
+            <EditText
+                android:id="@+id/add_offer_price"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/album_dp_50"
+                android:layout_below="@+id/add_offer_decrip"
+                android:layout_marginTop="@dimen/album_dp_20"
+                android:background="@drawable/ic_background_white"
+                android:gravity="center_vertical"
+                android:hint="@string/item_pric"
+                android:inputType="text"
+                android:paddingEnd="@dimen/album_dp_20"
+                android:layout_marginStart="@dimen/album_dp_20"
+                android:layout_marginEnd="@dimen/album_dp_20"
+                />
+
+
+            <LinearLayout
+                android:id="@+id/add_offers_layout_from_to"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/album_dp_50"
+                android:layout_below="@+id/add_offer_price"
+                android:layout_marginTop="@dimen/album_dp_20"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/album_dp_20"
+                android:layout_marginEnd="@dimen/album_dp_20"
+
+                >
+
+                <!---->
+
+                <TextView
+                    android:drawableEnd="@drawable/ic_date"
+                    android:paddingStart="8dp"
+                    android:id="@+id/add_offer_too_at"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="8dp"
+                    android:hint="@string/too"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_background_white"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    />
+
+                <TextView
+                    android:drawableEnd="@drawable/ic_date"
+                    android:id="@+id/add_offer_frome_at"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:gravity="center_vertical"
+                    android:hint="@string/frome"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_background_white"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+
+            <ImageView
+                android:id="@+id/add_offer_img"
+                android:layout_width="140dp"
+                android:layout_height="130dp"
+                android:layout_below="@+id/add_offers_layout_from_to"
+                android:layout_marginStart="@dimen/album_dp_50"
+                android:layout_marginTop="@dimen/album_dp_20"
+                android:src="@drawable/productphoto" />
+
+            <TextView
+                android:id="@+id/add_product_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/add_offers_layout_from_to"
+                android:layout_marginTop="@dimen/album_dp_50"
+                android:layout_toRightOf="@+id/add_offer_img"
+                android:text="@string/add_img_offer"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/album_sp_18" />
+
+
+            <Button
+                android:id="@+id/add_offer_btn_Add"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/album_dp_50"
+                android:layout_below="@+id/add_offer_img"
+                android:layout_marginTop="@dimen/album_dp_10"
+                android:layout_marginBottom="@dimen/album_dp_20"
+                android:background="@color/colorgreen"
+                android:text="@string/add"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/album_sp_18" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

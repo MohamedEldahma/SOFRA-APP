@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_sharch"
+        android:orderInCategory="100"
+        android:title="sharch"
+        android:icon="@drawable/ic_sarch"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/menu_shoping"
+        android:orderInCategory="100"
+        android:title="shoping"
+        android:icon="@drawable/ic_cart"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_back"
+        android:orderInCategory="100"
+        android:title="back"
+        android:icon="@drawable/ic_back"
+        app:showAsAction="always" />
+</menu>

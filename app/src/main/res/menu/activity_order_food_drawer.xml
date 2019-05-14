@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+   >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_main"
+            android:icon="@drawable/ic_main"
+            android:title="@string/main" />
+        <item
+            android:id="@+id/nav_myorder"
+            android:icon="@drawable/ic_myorder"
+            android:title="@string/muorder" />
+        <item
+            android:id="@+id/nav_alerts"
+            android:icon="@drawable/ic_alerts"
+            android:title="@string/alerts" />
+        <item
+            android:id="@+id/nav_new_offer"
+            android:icon="@drawable/ic_newofer"
+            android:title="@string/newoffer" />
+        <item
+            android:id="@+id/nav_about_app"
+            android:icon="@drawable/ic_aboutapp"
+            android:title="@string/aboutapp" />
+        <item
+            android:id="@+id/nav_term_condetion"
+            android:icon="@drawable/ic_term_condition"
+            android:title="@string/termcondetion" />
+        <item
+            android:id="@+id/nav_shar_app"
+            android:icon="@drawable/ic_shar_app"
+            android:title="@string/sharapp" />
+        <item
+            android:id="@+id/nav_contacuus"
+            android:icon="@drawable/ic_contact_us"
+            android:title="@string/contactus" />
+        <item
+            android:id="@+id/nav_signout"
+            android:icon="@drawable/ic_sign_out"
+            android:title="@string/signout" />
+    </group>
+
+
+</menu>

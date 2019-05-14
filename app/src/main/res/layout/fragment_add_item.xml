@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background_white"
+    android:orientation="vertical"
+    tools:context=".ui.frgment.resturant.AddItemFragment">
+
+    <EditText
+        android:id="@+id/name_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_50"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_20"
+        android:background="@drawable/ic_background_white"
+        android:hint="@string/name_item"
+        android:padding="@dimen/album_dp_10" />
+
+    <EditText
+        android:id="@+id/descrip_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_100"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_20"
+        android:background="@drawable/ic_background_white"
+        android:hint="@string/descrip_item"
+        android:padding="@dimen/album_dp_10"
+
+        />
+
+    <EditText
+        android:id="@+id/pric_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_50"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_20"
+        android:background="@drawable/ic_background_white"
+        android:hint="@string/pric_item"
+        android:padding="@dimen/album_dp_10"
+
+        />
+
+    <EditText
+        android:id="@+id/time_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_50"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_20"
+        android:background="@drawable/ic_background_white"
+        android:baselineAligned="false"
+        android:hint="@string/time_item"
+        android:padding="@dimen/album_dp_10" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginEnd="@dimen/album_dp_40"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_20"
+        android:orientation="horizontal"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/album_dp_10"
+            android:layout_marginRight="@dimen/album_dp_20"
+            android:layout_marginTop="@dimen/album_dp_20"
+            android:text="@string/text_item_photo"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/album_sp_16" />
+
+        <ImageView
+            android:id="@+id/photo_item"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="#e7e6e6"
+            android:src="@drawable/productphoto" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btt_ittem_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_20"
+        android:background="@color/colorgreen"
+        android:text="@string/add"
+        android:textColor="@color/albumFontLight" />
+
+
+</LinearLayout>

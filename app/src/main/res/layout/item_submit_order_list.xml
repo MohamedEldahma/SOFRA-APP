@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layoutDirection="rtl"
+    >
+
+    <ImageView
+        android:id="@+id/submit_order_img_item"
+        android:layout_width="@dimen/album_dp_80"
+        android:layout_height="@dimen/album_dp_80"
+        android:layout_margin="8dp"
+        android:src="@color/colorgray" />
+
+    <TextView
+        android:gravity="start"
+        android:id="@+id/submit_order_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/submit_order_img_item"
+        android:lines="1"
+        android:text="@string/user_name"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="end"
+        android:layout_alignParentEnd="true"
+        android:text="قم الطلب"
+        android:layout_toEndOf="@id/submit_order_name"
+        android:id="@+id/submit_order_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/submit_order_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/submit_order_name"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toEndOf="@+id/submit_order_img_item"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/submit_order_price"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/album_dp_20"
+            android:background="@color/colorgray"
+            android:gravity="center_vertical"
+            android:paddingRight="8dp"
+            android:text="@string/text_price"
+            android:textColor="@color/colorBlack"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/submit_order_delivery_cost"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/album_dp_20"
+            android:layout_marginTop="3dp"
+
+            android:background="@color/colorgray"
+            android:gravity="center_vertical"
+            android:paddingRight="8dp"
+            android:text="@string/delivery_fee_text"
+            android:textColor="@color/colorBlack"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/submit_order_total"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/album_dp_20"
+            android:layout_marginTop="3dp"
+            android:background="@color/colorgray"
+            android:gravity="center_vertical"
+            android:paddingRight="8dp"
+            android:text="@string/total"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/album_sp_14" />
+
+        <TextView
+            android:id="@+id/submit_order_address"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/album_dp_20"
+            android:layout_marginTop="3dp"
+            android:background="@color/colordark_gray"
+            android:gravity="center_vertical"
+            android:paddingRight="8dp"
+            android:text="@string/address"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/album_sp_14" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/submit_order_layout_bttn"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_below="@+id/submit_order_layout"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/submit_order_bttn_number"
+            android:layout_width="@dimen/album_dp_100"
+            android:layout_height="@dimen/album_dp_50"
+            android:layout_marginStart="@dimen/album_dp_20"
+            android:layout_marginEnd="@dimen/album_dp_15"
+            android:background="@color/colorred"
+            android:drawableStart="@drawable/ic_star_black_24dp"
+            android:lines="1"
+            android:paddingStart="8dp"
+            android:text="01112715251"
+            android:textColor="@color/colorWhite"
+            android:textSize="10sp" />
+
+        <Button
+            android:id="@+id/submit_order_bttn_accept"
+            android:layout_width="@dimen/album_dp_100"
+            android:layout_height="@dimen/album_dp_50"
+            android:layout_marginEnd="@dimen/album_dp_15"
+            android:background="@color/colorgreen"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:text="@string/accept"
+            android:textColor="@color/colorWhite"
+            android:textSize="10sp"/>
+
+        <Button
+            android:id="@+id/submit_order_bttn_cancel"
+            android:layout_width="@dimen/album_dp_100"
+            android:layout_height="@dimen/album_dp_50"
+            android:background="@color/colordark_gray"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:layout_marginEnd="@dimen/album_dp_20"
+            android:text="@string/refuese"
+            android:textColor="@color/colorgray"
+            android:textSize="10sp"
+            />
+    </LinearLayout>
+
+    <TextView
+
+
+        android:id="@+id/submit_order_complete_order"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/submit_order_layout_bttn"
+        android:background="@color/colorEditStart"
+        android:gravity="center"
+        android:text="@string/coplet_order"
+        android:textColor="@color/colorWhite"
+        android:textSize="12sp" />
+
+
+
+</RelativeLayout>

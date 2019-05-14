@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/my_offers_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <ImageView
+            android:id="@+id/my_offers_img"
+            android:layout_width="@dimen/album_dp_100"
+            android:layout_height="@dimen/album_dp_100"
+            android:layout_margin="8dp"
+            android:src="@color/colorgray" />
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_toEndOf="@+id/my_offers_img"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/my_offers_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/album_dp_2"
+                android:layout_marginBottom="8dp"
+                android:text="احصل علي خصم 50% علي كل طلب جديد"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/my_offers_name_rest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="محلات الفطيرة الدمشقية"
+                android:textColor="@color/colorBlack" />
+
+            <TextView
+                android:id="@+id/my_offers_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="ساري الي 0\00\0000"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/my_offers_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="السعر حسب الطلب"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

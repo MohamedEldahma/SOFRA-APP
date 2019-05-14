@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.frgment.clintorder.CommentEvaluationFragment">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/colorWhite"
+      android:gravity="center"
+      android:orientation="vertical"
+      >
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/text_add_comen"
+           android:textSize="@dimen/album_dp_15"
+           android:textColor="@color/colorBlack"
+           android:layout_marginBottom="@dimen/album_dp_4"
+           />
+     <Button
+         android:id="@+id/add_coment"
+         android:layout_width="wrap_content"
+         android:layout_height="@dimen/album_dp_40"
+         android:text="@string/btt_add_comen"
+         android:background="@drawable/ic_backgroun_yellow"
+         android:textColor="@color/albumPageLight"
+         android:textSize="@dimen/album_sp_14"
+         android:drawableStart="@drawable/ic_star_black_24dp"
+         android:drawableTint="@color/colorWhite"
+         android:paddingEnd="@dimen/album_dp_10"
+         android:paddingStart="@dimen/album_dp_10"
+         android:layout_marginBottom="@dimen/album_dp_4" />
+
+  </LinearLayout>
+
+   <android.support.v7.widget.RecyclerView
+       android:id="@+id/reting_coment_recycler"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+   </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

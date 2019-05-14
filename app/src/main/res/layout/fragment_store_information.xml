@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.frgment.clintorder.RestoreInformationFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/album_sp_16"
+            android:gravity="end"
+            android:layout_marginTop="@dimen/album_dp_10"
+            android:layout_marginEnd="@dimen/album_dp_6"
+            android:layout_marginStart="@dimen/album_dp_6"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="@string/text_status"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/album_sp_16"
+            android:layout_weight="1"
+            android:id="@+id/restaurant_info_status"
+            android:gravity="end"
+            android:layout_marginTop="@dimen/album_dp_10"
+            android:layout_marginEnd="@dimen/album_dp_6"
+            android:layout_marginStart="@dimen/album_dp_6"
+            android:textColor="@color/colorgreen"
+            android:textStyle="bold"
+            android:text="@string/text_status"/>
+
+
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_1"
+        android:layout_marginTop="@dimen/album_sp_16"
+        android:layout_marginStart="@dimen/album_dp_6"
+        android:layout_marginEnd="@dimen/album_dp_6"
+        android:background="@color/colorblack"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/album_sp_16"
+            android:gravity="end"
+            android:layout_marginTop="@dimen/album_dp_10"
+            android:layout_marginEnd="@dimen/album_dp_6"
+            android:layout_marginStart="@dimen/album_dp_6"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="@string/city_text"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/album_sp_16"
+            android:layout_weight="1"
+            android:id="@+id/restaurant_info_city"
+            android:gravity="end"
+            android:layout_marginTop="@dimen/album_dp_10"
+            android:layout_marginEnd="@dimen/album_dp_6"
+            android:layout_marginStart="@dimen/album_dp_6"
+            android:textStyle="bold"
+            android:text="@string/text_status"/>
+
+
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_1"
+        android:layout_marginTop="@dimen/album_sp_16"
+        android:layout_marginStart="@dimen/album_dp_6"
+        android:layout_marginEnd="@dimen/album_dp_6"
+        android:background="@color/colorblack"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/album_sp_16"
+            android:gravity="end"
+            android:layout_marginTop="@dimen/album_dp_10"
+            android:layout_marginEnd="@dimen/album_dp_6"
+            android:layout_marginStart="@dimen/album_dp_6"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="@string/region_text"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/album_sp_16"
+            android:layout_weight="1"
+            android:id="@+id/restaurant_info_region"
+            android:gravity="end"
+            android:layout_marginTop="@dimen/album_dp_10"
+            android:layout_marginEnd="@dimen/album_dp_6"
+            android:layout_marginStart="@dimen/album_dp_6"
+            android:textStyle="bold"
+            android:text="@string/text_status"/>
+
+
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_1"
+        android:layout_marginTop="@dimen/album_sp_16"
+        android:layout_marginStart="@dimen/album_dp_6"
+        android:layout_marginEnd="@dimen/album_dp_6"
+        android:background="@color/colorBlack"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/album_sp_16"
+            android:gravity="end"
+            android:layout_marginTop="@dimen/album_dp_10"
+            android:layout_marginEnd="@dimen/album_dp_6"
+            android:layout_marginStart="@dimen/album_dp_6"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="@string/minimum_order"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/album_sp_16"
+            android:layout_weight="1"
+            android:id="@+id/restaurant_info_min_order"
+            android:gravity="end"
+            android:layout_marginTop="@dimen/album_dp_10"
+            android:layout_marginEnd="@dimen/album_dp_6"
+            android:layout_marginStart="@dimen/album_dp_6"
+            android:textStyle="bold"
+            android:text="@string/text_status"/>
+
+
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_1"
+        android:layout_marginTop="@dimen/album_sp_16"
+        android:layout_marginStart="@dimen/album_dp_6"
+        android:layout_marginEnd="@dimen/album_dp_6"
+        android:background="@color/colorBlack"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/album_sp_16"
+            android:gravity="end"
+            android:layout_marginTop="@dimen/album_dp_10"
+            android:layout_marginEnd="@dimen/album_dp_6"
+            android:layout_marginStart="@dimen/album_dp_6"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="@string/delivery_fee_text"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/album_sp_16"
+            android:layout_weight="1"
+            android:id="@+id/restaurant_info_delivery_cost"
+            android:gravity="end"
+            android:layout_marginTop="@dimen/album_dp_10"
+            android:layout_marginEnd="@dimen/album_dp_6"
+            android:layout_marginStart="@dimen/album_dp_6"
+            android:textStyle="bold"
+            android:text="@string/text_status"/>
+
+
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_1"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:layout_marginEnd="@dimen/album_dp_6"
+        android:layout_marginStart="@dimen/album_dp_6"
+        android:background="@color/colorBlack"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
