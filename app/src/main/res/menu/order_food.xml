@@ -6,6 +6,6 @@
         android:id="@+id/menu_back"
         android:orderInCategory="50"
         android:title="back"
-        android:icon="@drawable/ic_back"
+        android:icon="@drawable/ic_back_black_24dp"
         app:showAsAction="always" />
 </menu>

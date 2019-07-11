@@ -11,17 +11,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.pro.sofranewapp.adapter.ItemResturantRcyclerAdapter;
-import com.example.pro.sofranewapp.helper.HelperMethod;
-import com.example.pro.sofranewapp.ui.frgment.clintorder.HomeOrderFragment;
-import com.example.pro.sofranewapp.ui.frgment.clintorder.LoginOrderFragment;
 import com.example.pro.sofranewapp.R;
-import com.example.pro.sofranewapp.ui.frgment.clintorder.InformationResturantViewPAgerFragment;
+import com.example.pro.sofranewapp.helper.HelperMethod;
+import com.example.pro.sofranewapp.helper.SharedPrefrancClass;
+import com.example.pro.sofranewapp.ui.frgment.clintorder.HomeOrderFragment;
 import com.example.pro.sofranewapp.ui.frgment.clintorder.MyOrderViewPgerFragment;
+import com.example.pro.sofranewapp.ui.frgment.clintorder.loginclint.LoginOrderFragment;
+import com.example.pro.sofranewapp.ui.frgment.clintorder.loginclint.ProfileClintFragment;
+import com.example.pro.sofranewapp.ui.frgment.general.ContactManagmentFragment;
 import com.example.pro.sofranewapp.ui.frgment.resturant.offers.MyOffer;
 
 import butterknife.BindView;
@@ -39,8 +39,8 @@ public class OrderFoodActivity extends AppCompatActivity
     NavigationView navViewFood;
     @BindView(R.id.drawer_layout_order)
     DrawerLayout drawerLayoutOrder;
-
-     TextView titel;
+      TextView titel;
+     String   api_token ;
 //    ImageButton imageButton ;
 
     @Override
@@ -50,8 +50,8 @@ public class OrderFoodActivity extends AppCompatActivity
         ButterKnife.bind(this);
        final Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-
+        api_token = SharedPrefrancClass.LoadStringData(OrderFoodActivity.this,"CLIENT_API_TOKEN");
+        titel =(TextView)findViewById(R.id.title_toolParr);
 
 
         final DrawerLayout drawer = findViewById(R.id.drawer_layout_order);
@@ -76,6 +76,7 @@ public class OrderFoodActivity extends AppCompatActivity
 
     Fragment homOrder= new HomeOrderFragment();
     selectFragment(homOrder);
+    titel.setText("طلب الطعام");
 
 
     }
@@ -127,27 +128,42 @@ public class OrderFoodActivity extends AppCompatActivity
         if (id == R.id.nav_main) {
             Fragment homOrder= new HomeOrderFragment();
             selectFragment(homOrder);
+            titel.setText("الرئيسيه");
 
         } else if (id == R.id.nav_myorder) {
             MyOrderViewPgerFragment myRequewstOrderFragment =new MyOrderViewPgerFragment();
             HelperMethod .replaceFrag(myRequewstOrderFragment,getSupportFragmentManager(),R.id.id_fram_Home_nvigation1);
-
+             titel.setText("طلباتي");
         } else if (id == R.id.nav_alerts) {
+            titel.setText("التنبيهات");
 
         } else if (id == R.id.nav_new_offer) {
             MyOffer myOffer = new MyOffer();
             replaceFrag(myOffer,getSupportFragmentManager(),R.id.id_fram_Home_nvigation1);
+            titel.setText("جديد العروض");
 
         } else if (id == R.id.nav_about_app) {
+            ProfileClintFragment profileClintFragment = new ProfileClintFragment();
+            HelperMethod.replaceFrag(profileClintFragment,getSupportFragmentManager(),R.id.id_fram_Home_nvigation1);
+            titel.setText("عن التطبيق");
 
 
         } else if (id == R.id.nav_term_condetion) {
+            titel.setText("الشروط والاحكام");
+
 
         } else if (id == R.id.nav_shar_app) {
+            titel.setText("شارك التطبيق");
+
 
         } else if (id == R.id.nav_contacuus) {
+            ContactManagmentFragment contactManagmentFragment = new ContactManagmentFragment();
+            HelperMethod.replaceFrag(contactManagmentFragment,getSupportFragmentManager(),R.id.id_fram_Home_nvigation1);
+            titel.setText("تواصل معنا");
+
 
         } else if (id == R.id.nav_signout) {
+
 
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout_order);

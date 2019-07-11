@@ -4,6 +4,8 @@ package com.example.pro.sofranewapp.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -15,10 +17,15 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.pro.sofranewapp.R;
 import com.example.pro.sofranewapp.data.model.resturant.myitem.MyItemDatum;
+import com.example.pro.sofranewapp.helper.HelperMethod;
+import com.example.pro.sofranewapp.ui.frgment.general.DisplayFoodItemFragment;
+
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.example.pro.sofranewapp.helper.HelperMethod.replaceFrag;
 
 public class MyItemAdapter extends RecyclerView.Adapter<MyItemAdapter.ViewHolder> {
 
@@ -55,8 +62,27 @@ public class MyItemAdapter extends RecyclerView.Adapter<MyItemAdapter.ViewHolder
         viewHolder.textDescripName.setText(description);
        final String price = itemsDatum.getPrice();
         viewHolder.textItemPric.setText(price);
-//        final long id =itemsDatum.getId();
+//        final String perparingTime = itemsDatum.getPreparingTime();
+//        final int id =itemsDatum.getId();
 //        idResturant = itemsDatum.getRestaurantId();
+//
+//        viewHolder.myIteCardview.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                DisplayFoodItemFragment displayFoodItemFragment = new DisplayFoodItemFragment();
+//                displayFoodItemFragment.getitem_photo = photo;
+//                displayFoodItemFragment.getitem_desc = description;
+//                displayFoodItemFragment.getitem_name = name;
+//                displayFoodItemFragment.getitem_price = price;
+//                displayFoodItemFragment.getitem_wait = perparingTime;
+//                displayFoodItemFragment.idItem = id;
+//                displayFoodItemFragment.id_Resturant = idResturant;
+//
+//                FragmentManager fragmentManager = ((FragmentActivity)context).getSupportFragmentManager();
+//                replaceFrag(displayFoodItemFragment,fragmentManager,R.id.id_fram_Home_nvigation1);
+//            }
+//        });
 
     }
 

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.frgment.general.DisplayFoodItemFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_item"
+                android:layout_width="250dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/album_dp_10"
+                android:background="@color/colorgreen"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/img_item"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-thin"
+                android:text="اسم الطعام"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/album_sp_16"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/item_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/item_name"
+                android:layout_marginStart="8dp"
+                android:ems="10"
+                android:lines="4"
+                android:padding="@dimen/album_dp_6"
+                android:text=" عن وصف للطعام المطلو " />
+
+            <TextView
+                android:id="@+id/item_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/item_name"
+                android:layout_margin="8dp"
+                android:lines="2"
+                android:padding="8dp"
+                android:text="السعر \n   20"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/View1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/album_dp_1"
+                android:layout_below="@+id/item_desc"
+                android:layout_marginEnd="6dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/album_dp_6"
+                android:background="@color/colordark_gray" />
+
+            <TextView
+                android:id="@+id/display_item_wait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/View1"
+                android:layout_marginTop="@dimen/album_dp_6"
+                android:padding="@dimen/album_dp_6"
+                android:text="مدة تجهيز الطلب : 20 دقيقة"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/View2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/album_dp_1"
+                android:layout_below="@+id/display_item_wait"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/album_dp_6"
+                android:background="@color/colordark_gray" />
+
+            <TextView
+                android:id="@+id/edit_text_special_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/View2"
+                android:layout_marginTop="@dimen/album_dp_6"
+                android:padding="@dimen/album_dp_6"
+                android:text="طلب خاص" />
+
+            <EditText
+                android:id="@+id/item_special_order"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/album_dp_80"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/edit_text_special_order"
+                android:layout_marginBottom="@dimen/album_dp_20"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="@dimen/album_dp_10"
+                android:background="@color/colorHome" />
+
+            <TextView
+                android:id="@+id/display_item_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/item_special_order"
+                android:layout_marginEnd="@dimen/album_dp_15"
+                android:layout_marginTop="@dimen/album_dp_15"
+                android:layout_marginBottom="@dimen/album_dp_10"
+                android:layout_marginStart="@dimen/album_dp_15"
+                android:text="الكمية"
+                android:textColor="@color/colorBlack" />
+
+            <Button
+                android:id="@+id/item_btn_mins"
+                android:layout_width="@dimen/album_dp_50"
+                android:layout_height="@dimen/album_dp_40"
+                android:layout_below="@id/item_special_order"
+                android:layout_marginEnd="@dimen/album_dp_6"
+                android:layout_marginTop="3dp"
+                android:layout_toEndOf="@+id/display_item_count"
+                android:background="@color/colorgreen"
+                android:paddingRight="@dimen/album_dp_15" />
+
+            <TextView
+                android:id="@+id/item_display_count"
+                android:layout_width="@dimen/nav_header_height"
+                android:layout_height="@dimen/album_dp_40"
+                android:layout_below="@+id/item_special_order"
+                android:layout_marginEnd="8dp"
+                android:layout_toEndOf="@+id/item_btn_mins"
+                android:background="@drawable/ic_background_white"
+                android:gravity="center"
+                android:text="1" />
+
+            <Button
+                android:id="@+id/item_btn_plus"
+                android:layout_width="@dimen/album_dp_50"
+                android:layout_height="@dimen/album_dp_40"
+                android:layout_below="@id/item_special_order"
+                android:layout_marginEnd="@dimen/album_dp_6"
+                android:layout_marginTop="3dp"
+                android:layout_toEndOf="@+id/item_display_count"
+                android:background="@color/colorgreen"
+                android:paddingRight="@dimen/album_dp_15" />
+
+
+            <Button
+
+                android:id="@+id/btn_addTo_cart"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/album_dp_45"
+                android:layout_below="@+id/item_display_count"
+                android:layout_marginBottom="@dimen/album_dp_20"
+                android:layout_marginEnd="@dimen/album_dp_6"
+                android:layout_marginStart="@dimen/album_dp_6"
+                android:layout_marginTop="@dimen/album_dp_20"
+                android:background="@color/colorPrimary"
+                android:drawableRight="@drawable/ic_shopping_basket_black_24dp"
+                android:gravity="start|center"
+                android:paddingEnd="130dp"
+                android:paddingStart="130dp"
+
+                android:text="اضف الي السله"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

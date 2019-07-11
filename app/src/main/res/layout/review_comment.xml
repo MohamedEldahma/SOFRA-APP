@@ -10,11 +10,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/review_resturant"
         android:layout_marginTop="@dimen/album_dp_10"
+        android:text="@string/review_resturant"
         android:textColor="@color/colorBlack"
-        android:textSize="@dimen/album_sp_20"
-        />
+        android:textSize="@dimen/album_sp_20" />
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="@dimen/album_dp_50"
+        android:layout_height="@dimen/album_dp_40"
+        android:layout_gravity="start"
+       android:layout_marginStart="@dimen/album_dp_6"
+        android:background="#fddd8b"
+        android:text="Clos"
+        android:textColor="#504d4d"
+        android:textSize="@dimen/album_sp_14" />
+
     <RatingBar
         android:id="@+id/rting_coment"
         android:layout_width="wrap_content"
@@ -23,23 +33,23 @@
         android:layout_marginTop="@dimen/album_dp_6"
         android:layout_marginStart="@dimen/album_dp_6"
         android:layout_alignParentEnd="true"
-        android:isIndicator="true"
         android:numStars="5"
         android:progressTint="@color/coloryellow"
-        android:rating="3"
+        android:rating="2"
         android:stepSize="1"
         android:layout_marginBottom="@dimen/album_dp_4"
         android:layout_gravity="center" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add_comment"
         android:layout_gravity="center"
+        android:text="@string/add_comment"
         android:textColor="@color/colorBlack"
         android:textSize="@dimen/album_sp_20"
 
         />
-    <TextView
+    <EditText
         android:id="@+id/add_comment"
         android:layout_width="match_parent"
         android:layout_height="@dimen/album_dp_200"
@@ -57,6 +67,7 @@
         android:text="@string/btt_add"
         android:layout_marginStart="@dimen/album_dp_10"
         android:layout_marginEnd="@dimen/album_dp_10"
+        android:layout_marginBottom="@dimen/album_dp_10"
         android:textColor="@color/colorWhite"
         android:textSize="@dimen/album_sp_20"
         />

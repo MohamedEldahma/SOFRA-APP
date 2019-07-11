@@ -10,12 +10,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pro.sofranewapp.R;
-import com.example.pro.sofranewapp.data.ApiSofraModel;
-import com.example.pro.sofranewapp.data.RerofitSofraClint;
+import com.example.pro.sofranewapp.data.api.ApiSofraModel;
+import com.example.pro.sofranewapp.data.api.RerofitSofraClint;
 import com.example.pro.sofranewapp.data.model.general.restaurantdetail.RestaDetailCity;
 import com.example.pro.sofranewapp.data.model.general.restaurantdetail.RestaDetailData;
 import com.example.pro.sofranewapp.data.model.general.restaurantdetail.RestaDetailRegion;
 import com.example.pro.sofranewapp.data.model.general.restaurantdetail.RestaurantDetail;
+import com.example.pro.sofranewapp.helper.SharedPrefrancClass;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,6 +43,7 @@ public class RestoreInformationFragment extends Fragment {
     TextView restaurantInfoDeliveryCost;
     Unbinder unbinder;
     ApiSofraModel apiSofraModel;
+    private int id_resturant;
 
     public RestoreInformationFragment() {
         // Required empty public constructor
@@ -54,6 +56,7 @@ public class RestoreInformationFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_store_information, container, false);
         unbinder = ButterKnife.bind(this, view);
+        id_resturant = SharedPrefrancClass.LoadIntegerData(getActivity(), "id_Resturant");
         apiSofraModel = RerofitSofraClint.getClient().create(ApiSofraModel.class);
         getResturantData();
         return view;
@@ -62,7 +65,7 @@ public class RestoreInformationFragment extends Fragment {
 
 
     public  void  getResturantData(){
-        apiSofraModel.getResturantDetail(25)
+        apiSofraModel.getResturantDetail(id_resturant)
                      .enqueue(new Callback<RestaurantDetail>() {
                          @Override
                          public void onResponse(Call<RestaurantDetail> call, Response<RestaurantDetail> response) {
@@ -81,10 +84,6 @@ public class RestoreInformationFragment extends Fragment {
                              restaurantInfoRegion.setText(regionNAme);
                              restaurantInfoMinOrder.setText(mnimumOrder);
                              restaurantInfoDeliveryCost.setText(delevaryCost);
-
-
-
-
                          }else {
                              Toast.makeText(getContext(), "False", Toast.LENGTH_SHORT).show();
                          }

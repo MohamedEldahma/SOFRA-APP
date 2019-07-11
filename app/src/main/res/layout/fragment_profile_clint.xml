@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/ic_background_white"
+    tools:context=".ui.frgment.clintorder.loginclint.ProfileClintFragment">
+
+    <EditText
+        android:id="@+id/name_user_profil"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_45"
+        android:background="@drawable/ic_background_white"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:hint="@string/string_name"
+        android:inputType="textPersonName"
+        android:padding="@dimen/album_dp_10"
+
+
+        />
+    <EditText
+        android:id="@+id/email_user_profil"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_45"
+        android:background="@drawable/ic_background_white"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:padding="@dimen/album_dp_10"
+        android:hint="@string/string_email"
+        android:inputType="textEmailAddress"
+
+        />
+
+    <EditText
+        android:id="@+id/phone_number_user_profil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:background="@drawable/ic_background_white"
+        android:hint="@string/string_phone"
+        android:inputType="phone"
+        android:padding="@dimen/album_dp_10"
+
+
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_45"
+        android:background="@color/albumFontLight"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_6"
+        >
+
+        <!--<EditText-->
+        <!--android:id="@+id/text_governorat"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@color/albumFontLight"-->
+        <!--android:textAppearance="?android:textAppearanceMedium"-->
+        <!--android:paddingTop="@dimen/album_dp_10"-->
+        <!--android:paddingRight="@dimen/album_dp_10"-->
+        <!--android:paddingBottom="@dimen/album_dp_6"-->
+        <!--android:hint="@string/string_city"-->
+        <!--android:layout_alignParentRight="true"-->
+
+        <!--/>-->
+
+        <Spinner
+            android:id="@+id/user_spiner_city_profil"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/ic_background_white"
+
+            />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_45"
+        android:background="@color/albumFontLight"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_6"
+        >
+        <!--<EditText-->
+        <!--android:id="@+id/city_id"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:textAppearance="?android:textAppearanceMedium"-->
+        <!--android:paddingTop="@dimen/album_dp_10"-->
+        <!--android:paddingRight="@dimen/album_dp_10"-->
+        <!--android:paddingBottom="@dimen/album_dp_6"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:background="@color/albumFontLight"-->
+        <!--android:hint="@string/string_adress"-->
+
+        <!--/>-->
+
+        <Spinner
+            android:id="@+id/user_spiner_regions_profil"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/ic_background_white"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+
+
+
+    <EditText
+        android:id="@+id/descrip_adress_profil"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/ic_background_white"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:padding="@dimen/album_dp_10"
+        android:hint="@string/string_descripleving"
+        android:inputType="textEmailAddress"
+
+        />
+    <EditText
+        android:id="@+id/password_user_profil"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_45"
+        android:background="@drawable/ic_background_white"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:hint="@string/string_password"
+        android:inputType="textPassword"
+        android:padding="@dimen/album_dp_10"
+
+        />
+    <EditText
+        android:id="@+id/confirm_password_user_profil"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_45"
+        android:background="@drawable/ic_background_white"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:padding="@dimen/album_dp_10"
+        android:hint="@string/string_confirmpassword"
+        android:inputType="textPassword"
+
+
+        />
+    <Button
+        android:id="@+id/register_user_profil"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_45"
+        android:background="#198A51"
+        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:text="@string/string_chang"
+        android:clickable="true"
+
+
+        />
+
+
+
+</LinearLayout>

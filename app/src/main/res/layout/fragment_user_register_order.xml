@@ -3,8 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".ui.frgment.clintorder.UserRegisterOrderFragment">
+    android:background="@color/colorHome"
+    app:barrierDirection="end"
+    tools:context=".ui.frgment.clintorder.loginclint.UserRegisterOrderFragment">
     <EditText
         android:id="@+id/name_user"
         android:layout_width="match_parent"
@@ -32,77 +35,83 @@
         android:inputType="textEmailAddress"
 
         />
+
     <EditText
         android:id="@+id/phone_number_user"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/album_dp_45"
-        android:background="@drawable/ic_background_white"
-        android:layout_marginStart="@dimen/album_dp_20"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/album_dp_20"
+        android:layout_marginStart="@dimen/album_dp_20"
         android:layout_marginTop="@dimen/album_dp_10"
-        android:padding="@dimen/album_dp_10"
+        android:background="@drawable/ic_background_white"
         android:hint="@string/string_phone"
         android:inputType="phone"
+        android:padding="@dimen/album_dp_10"
         android:textAlignment="textStart"
 
         />
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/album_dp_40"
+        android:layout_height="@dimen/album_dp_45"
         android:background="@color/albumFontLight"
         android:layout_marginStart="@dimen/album_dp_20"
         android:layout_marginEnd="@dimen/album_dp_20"
         android:layout_marginTop="@dimen/album_dp_6"
         >
 
-        <EditText
-            android:id="@+id/text_governorat"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/albumFontLight"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:paddingTop="@dimen/album_dp_10"
-            android:paddingRight="@dimen/album_dp_10"
-            android:paddingBottom="@dimen/album_dp_6"
-            android:layout_alignParentRight="true"
+        <!--<EditText-->
+            <!--android:id="@+id/text_governorat"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@color/albumFontLight"-->
+            <!--android:textAppearance="?android:textAppearanceMedium"-->
+            <!--android:paddingTop="@dimen/album_dp_10"-->
+            <!--android:paddingRight="@dimen/album_dp_10"-->
+            <!--android:paddingBottom="@dimen/album_dp_6"-->
+            <!--android:hint="@string/string_city"-->
+            <!--android:layout_alignParentRight="true"-->
 
-            />
+            <!--/>-->
 
         <Spinner
             android:id="@+id/user_spiner_city"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
+            android:background="@drawable/ic_background_white"
+
             />
     </RelativeLayout>
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/album_dp_40"
+        android:layout_height="@dimen/album_dp_45"
         android:background="@color/albumFontLight"
         android:layout_marginStart="@dimen/album_dp_20"
         android:layout_marginEnd="@dimen/album_dp_20"
         android:layout_marginTop="@dimen/album_dp_6"
         >
-        <EditText
-            android:id="@+id/city_id"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:paddingTop="@dimen/album_dp_10"
-            android:paddingRight="@dimen/album_dp_10"
-            android:paddingBottom="@dimen/album_dp_6"
-            android:layout_alignParentRight="true"
-            android:background="@color/albumFontLight"
+        <!--<EditText-->
+            <!--android:id="@+id/city_id"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:textAppearance="?android:textAppearanceMedium"-->
+            <!--android:paddingTop="@dimen/album_dp_10"-->
+            <!--android:paddingRight="@dimen/album_dp_10"-->
+            <!--android:paddingBottom="@dimen/album_dp_6"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:background="@color/albumFontLight"-->
+            <!--android:hint="@string/string_adress"-->
 
-            />
+            <!--/>-->
 
         <Spinner
             android:id="@+id/user_spiner_regions"
-            android:layout_width="wrap_content"
-            android:layout_height="34dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
+            android:background="@drawable/ic_background_white"
             android:spinnerMode="dropdown" />
     </RelativeLayout>
 
@@ -133,7 +142,6 @@
         android:hint="@string/string_password"
         android:inputType="textPassword"
         android:padding="@dimen/album_dp_10"
-        android:textAlignment="textEnd"
 
         />
     <EditText
@@ -147,7 +155,6 @@
         android:padding="@dimen/album_dp_10"
         android:hint="@string/string_confirmpassword"
         android:inputType="textPassword"
-        android:textAlignment="textEnd"
 
 
         />

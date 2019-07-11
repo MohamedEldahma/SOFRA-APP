@@ -12,13 +12,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
-import com.example.pro.sofranewapp.helper.HelperMethod;
 import com.example.pro.sofranewapp.helper.SharedPrefrancClass;
 import com.example.pro.sofranewapp.ui.frgment.resturant.HomeSelFragment;
 import com.example.pro.sofranewapp.R;
-import com.example.pro.sofranewapp.ui.frgment.resturant.LoginResturantFragment;
-import com.example.pro.sofranewapp.ui.frgment.resturant.MyItemFragment;
+import com.example.pro.sofranewapp.ui.frgment.resturant.loginResturant.LoginResturantFragment;
+import com.example.pro.sofranewapp.ui.frgment.resturant.item.MyItemFragment;
 import com.example.pro.sofranewapp.ui.frgment.resturant.offers.MyOffer;
 import com.example.pro.sofranewapp.ui.frgment.resturant.order.SubmitOrderResturantFragment;
 
@@ -27,6 +27,7 @@ import static com.example.pro.sofranewapp.helper.HelperMethod.replaceFrag;
 public class SelFoodActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private String api_tokenResturant;
+    TextView  titel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,7 @@ public class SelFoodActivity extends AppCompatActivity
     public  void  loginResturant(){
         Fragment loginResturant = new LoginResturantFragment();
         addFragment(loginResturant);
+//        titel.setText("تسجيل الدخول");
 
     }
     public void addFragment(Fragment fragment){
@@ -110,26 +112,35 @@ public class SelFoodActivity extends AppCompatActivity
         if (id == R.id.nav_main) {
             Fragment fragment =new HomeSelFragment();
             addFragment(fragment);
+            titel.setText("الصفحه الرئيسيه");
+
             // Handle the camera action
         } else if (id == R.id.nav_myorder) {
             MyItemFragment myItemFragment = new MyItemFragment();
             replaceFrag(myItemFragment,getSupportFragmentManager(),R.id.id_fram_Home_nvigation1);
+            titel.setText("منتجاتي");
 
         } else if (id == R.id.nav_alerts) {
             SubmitOrderResturantFragment submitOrderResturantFragment = new SubmitOrderResturantFragment();
             replaceFrag(submitOrderResturantFragment,getSupportFragmentManager(),R.id.id_fram_Home_nvigation1);
+            titel.setText("التنبيهات");
 
         } else if (id == R.id.nav_new_offer) {
             MyOffer myOffer = new MyOffer();
             replaceFrag(myOffer,getSupportFragmentManager(),R.id.id_fram_Home_nvigation1);
+            titel.setText("عروضي");
 
         } else if (id == R.id.nav_about_app) {
+            titel.setText("عن التطبيق");
 
         } else if (id == R.id.nav_term_condetion) {
+            titel.setText("الشروط والاحكام");
 
         }else if (id == R.id.nav_shar_app) {
+            titel.setText("شارك التطبيق ");
 
         }else if (id == R.id.nav_contacuus) {
+            titel.setText("تواصل معنا");
 
         }else if (id == R.id.nav_signout) {
         }

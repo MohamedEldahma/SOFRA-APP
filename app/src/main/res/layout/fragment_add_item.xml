@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/ic_background_white"
     android:orientation="vertical"
-    tools:context=".ui.frgment.resturant.AddItemFragment">
+    tools:context=".ui.frgment.resturant.item.AddItemFragment">
 
     <EditText
         android:id="@+id/name_item"

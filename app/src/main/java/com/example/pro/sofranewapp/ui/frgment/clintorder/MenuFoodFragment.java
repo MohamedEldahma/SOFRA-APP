@@ -13,8 +13,8 @@ import android.widget.Toast;
 
 import com.example.pro.sofranewapp.R;
 import com.example.pro.sofranewapp.adapter.ListResturantItemAdapter;
-import com.example.pro.sofranewapp.data.ApiSofraModel;
-import com.example.pro.sofranewapp.data.RerofitSofraClint;
+import com.example.pro.sofranewapp.data.api.ApiSofraModel;
+import com.example.pro.sofranewapp.data.api.RerofitSofraClint;
 import com.example.pro.sofranewapp.data.model.clint.listrestitems.ListRestItemsDatum;
 import com.example.pro.sofranewapp.data.model.clint.listrestitems.ListResturantItems;
 import com.example.pro.sofranewapp.helper.SharedPrefrancClass;

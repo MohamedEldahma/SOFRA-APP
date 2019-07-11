@@ -1,7 +1,6 @@
 package com.example.pro.sofranewapp.ui.frgment.resturant.offers;
 
 
-import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -9,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -18,17 +16,15 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.pro.sofranewapp.R;
-import com.example.pro.sofranewapp.data.ApiSofraModel;
-import com.example.pro.sofranewapp.data.RerofitSofraClint;
+import com.example.pro.sofranewapp.data.api.ApiSofraModel;
+import com.example.pro.sofranewapp.data.api.RerofitSofraClint;
 import com.example.pro.sofranewapp.data.model.resturant.addnewofferResturant.AddNewOfferResturant;
 import com.example.pro.sofranewapp.helper.CalendrHelper;
 import com.yanzhenjie.album.Action;
 import com.yanzhenjie.album.AlbumFile;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -44,7 +40,6 @@ import static com.example.pro.sofranewapp.helper.HelperMethod.convertFileToMulti
 import static com.example.pro.sofranewapp.helper.HelperMethod.convertStringToRequestBody;
 import static com.example.pro.sofranewapp.helper.HelperMethod.openAlbum;
 import static com.example.pro.sofranewapp.helper.HelperMethod.replaceFrag;
-import static java.util.Calendar.YEAR;
 
 /**
  * A simple {@link Fragment} subclass.

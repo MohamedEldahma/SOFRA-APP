@@ -15,14 +15,13 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.pro.sofranewapp.R;
-import com.example.pro.sofranewapp.data.ApiSofraModel;
-import com.example.pro.sofranewapp.data.RerofitSofraClint;
+import com.example.pro.sofranewapp.data.api.ApiSofraModel;
+import com.example.pro.sofranewapp.data.api.RerofitSofraClint;
 import com.example.pro.sofranewapp.data.model.general.restaurantdetail.RestaDetailCategory;
 import com.example.pro.sofranewapp.data.model.general.restaurantdetail.RestaDetailData;
 import com.example.pro.sofranewapp.data.model.general.restaurantdetail.RestaurantDetail;
-import com.example.pro.sofranewapp.helper.SharedPrefManager;
 import com.example.pro.sofranewapp.helper.SharedPrefrancClass;
-import com.example.pro.sofranewapp.helper.TabMenuFood;
+import com.example.pro.sofranewapp.adapter.TabMenuFood;
 
 import java.util.List;
 

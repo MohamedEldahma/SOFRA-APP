@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorHome"
+    tools:context=".ui.frgment.general.ContactManagmentFragment">
+
+    <EditText
+        android:id="@+id/my_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/ic_background_white"
+        android:hint="@string/full_name"
+        android:paddingRight="10dp"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/my_mail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_40"
+        android:layout_marginLeft="@dimen/album_dp_10"
+        android:layout_marginTop="@dimen/album_dp_20"
+        android:layout_marginRight="@dimen/album_dp_10"
+        android:background="@drawable/ic_background_white"
+
+        android:hint="@string/mail"
+        android:paddingRight="10dp"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/my_phone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_40"
+        android:layout_marginLeft="@dimen/album_dp_10"
+        android:layout_marginTop="@dimen/album_dp_20"
+        android:layout_marginRight="@dimen/album_dp_10"
+        android:background="@drawable/ic_background_white"
+        android:hint="@string/phonen_umber"
+        android:paddingRight="10dp"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/my_content"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="@dimen/album_dp_10"
+        android:layout_marginTop="@dimen/album_dp_20"
+        android:layout_marginEnd="@dimen/album_dp_10"
+        android:background="@drawable/ic_background_white"
+        android:paddingRight="@dimen/album_dp_10"
+        android:textSize="@dimen/album_sp_16" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_30"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@drawable/ic_background_white"
+        android:layout_marginEnd="@dimen/album_dp_10"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:layout_marginStart="@dimen/album_dp_10">
+       <RadioButton
+           android:id="@+id/complain_id"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/complain"
+
+           />
+        <RadioButton
+
+           android:id="@+id/suggest_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/suggest"
+            android:layout_marginEnd="@dimen/album_dp_40"
+            android:layout_marginStart="@dimen/album_dp_40"
+
+
+            />
+        <RadioButton
+            android:id="@+id/select_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/send_id"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/album_dp_45"
+        android:layout_marginLeft="@dimen/album_dp_10"
+        android:layout_marginTop="@dimen/album_dp_10"
+        android:layout_marginRight="@dimen/album_dp_10"
+        android:background="#46b35a"
+        android:text="@string/ptt_send"
+        android:textColor="#fff"
+        android:textSize="@dimen/album_sp_20" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/album_dp_20"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/album_dp_10"
+            android:paddingTop="@dimen/album_dp_10"
+            android:text="@string/follow_us"
+            android:textSize="@dimen/album_sp_16"
+            android:paddingEnd="@dimen/album_dp_10"
+
+            android:textStyle="bold" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cont_facbook"
+            android:layout_width="@dimen/album_dp_50"
+            android:layout_height="@dimen/album_dp_50"
+            android:paddingEnd="@dimen/album_dp_10"
+            android:src="@drawable/ic_facbock" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cont_twitter"
+            android:layout_width="@dimen/album_dp_50"
+            android:layout_height="@dimen/album_dp_50"
+            android:paddingEnd="@dimen/album_dp_10"
+            android:src="@drawable/ic_tweter" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cont_instigram"
+            android:layout_width="@dimen/album_dp_50"
+            android:layout_height="@dimen/album_dp_50"
+            android:paddingEnd="@dimen/album_dp_10"
+
+            android:src="@drawable/ic_insgrame" />
+    </LinearLayout>
+
+</LinearLayout>

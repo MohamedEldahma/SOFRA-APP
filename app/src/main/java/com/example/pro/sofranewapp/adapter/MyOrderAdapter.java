@@ -15,8 +15,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.pro.sofranewapp.R;
-import com.example.pro.sofranewapp.data.ApiSofraModel;
-import com.example.pro.sofranewapp.data.RerofitSofraClint;
+import com.example.pro.sofranewapp.data.api.ApiSofraModel;
+import com.example.pro.sofranewapp.data.api.RerofitSofraClint;
 import com.example.pro.sofranewapp.data.model.clint.myorderclint.Item;
 import com.example.pro.sofranewapp.data.model.clint.myorderclint.MyOrderDatum;
 import com.example.pro.sofranewapp.data.model.resturant.accceptorderresturant.AccceptOrderResturant;
@@ -92,10 +92,10 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.ViewHold
                                     @Override
                                     public void onResponse(Call<AccceptOrderResturant> call, Response<AccceptOrderResturant> response) {
                                         if (response.body().getStatus() == 1){
-                                            Toast.makeText(activity, "Order Confirm", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(activity, "CompleetOrder Confirm", Toast.LENGTH_SHORT).show();
                                             
                                         }else {
-                                            Toast.makeText(activity, "Order Not Confirm", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(activity, "CompleetOrder Not Confirm", Toast.LENGTH_SHORT).show();
                                             myOrderDatumList.remove(postion);
 
                                             notifyDataSetChanged();
@@ -123,7 +123,7 @@ public class MyOrderAdapter extends RecyclerView.Adapter<MyOrderAdapter.ViewHold
                                            myOrderDatumList.remove(postion);
 
                                            notifyDataSetChanged();
-                                           Toast.makeText(activity, "Order Canceld", Toast.LENGTH_SHORT).show();
+                                           Toast.makeText(activity, "CompleetOrder Canceld", Toast.LENGTH_SHORT).show();
                                        }else {
                                            Toast.makeText(activity, "order Not Canceld", Toast.LENGTH_SHORT).show();
                                        }

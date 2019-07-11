@@ -108,6 +108,22 @@
     <string name="frome">من</string>
     <string name="add_img_offer">اضافة صورة العرض</string>
     <string name="text_add_new_offer">اضافة عرض جديد</string>
+    <string name="food_text_name">الطعام</string>
+    <string name="the_sum">المجموع الكلي</string>
+    <string name="excut_eorder">تنفيذ الطلب</string>
+    <string name="add_more">اضافة المزيد</string>
+    <string name="full_name">الاسم كاملا</string>
+    <string name="mail">الاميل</string>
+    <string name="phonen_umber">الهاتف</string>
+    <string name="ptt_send">ارسال</string>
+    <string name="follow_us">تابعنا علي :</string>
+    <string name="suggest">اقتراح</string>
+    <string name="select">استعلام</string>
+    <string name="complain">شكوي</string>
+    <string name="string_chang">تعديل</string>
+    <string name="add_not">اضافة ملاحظات</string>
+    <string name="adress_deliver">عنوان التوصيل</string>
+    <string name="text_bayment">الدفع</string>
 
 
 </resources>

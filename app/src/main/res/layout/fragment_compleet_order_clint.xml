@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background_white"
+    android:layoutDirection="rtl"
+    tools:context=".ui.frgment.clintorder.CompleetOrderClint">
+
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      <LinearLayout
+          android:layout_margin="@dimen/album_dp_20"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+          <RelativeLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+              <TextView
+                  android:id="@+id/text_not"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/add_not"
+                  android:textColor="@color/colorBlack"
+                  android:textSize="@dimen/album_sp_16"
+                  android:textStyle="bold" />
+
+              <EditText
+                  android:id="@+id/text_add_not"
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/album_dp_200"
+                  android:layout_below="@id/text_not"
+                  android:layout_marginTop="@dimen/album_dp_6"
+                  android:background="@drawable/ic_background_white" />
+
+              <TextView
+                  android:id="@+id/adress_diliver"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/text_add_not"
+                  android:layout_marginTop="@dimen/album_dp_6"
+                  android:text="@string/adress_deliver"
+                  android:textColor="@color/colorBlack"
+                  android:textSize="@dimen/album_sp_16"
+                  android:textStyle="bold"
+
+                  />
+
+              <EditText
+                  android:id="@+id/add_adress_diliver"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/adress_diliver"
+                  android:layout_marginTop="@dimen/album_dp_6"
+                  android:background="@drawable/ic_background_white"
+                  android:hint="@string/adress_deliver"
+                  android:textColor="@color/colorBlack"
+                  android:textSize="@dimen/album_sp_16" />
+
+              <TextView
+                  android:id="@+id/text_bayment"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/add_adress_diliver"
+                  android:layout_marginTop="@dimen/album_dp_20"
+                  android:text="@string/text_bayment"
+                  android:textColor="@color/colorBlack"
+                  android:textSize="@dimen/album_sp_16"
+                  android:textStyle="bold" />
+
+              <LinearLayout
+                  android:id="@+id/textBayment_layout"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/text_bayment"
+                  android:orientation="horizontal">
+
+                  <RadioGroup
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="horizontal">
+
+                      <RadioButton
+                          android:id="@+id/cashe_on_delevary"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:text="نقدا عند الاستلام" />
+
+                      <RadioButton
+                          android:id="@+id/internt_on_delevary"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_weight="1"
+                          android:text="شبكه عند الاستلام"
+
+                          />
+
+                  </RadioGroup>
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:id="@+id/layout_one"
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/album_dp_40"
+                  android:layout_below="@id/textBayment_layout"
+                  android:layout_marginTop="@dimen/album_dp_50"
+                  android:background="@color/colorRegister"
+                  android:orientation="horizontal">
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center_vertical"
+                      android:text="المجموع                        :"
+                      android:textColor="@color/colorBlack" />
+
+                  <TextView
+                      android:id="@+id/copleet_order_total"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center_vertical"
+                      android:gravity="end"
+                      android:text="20 ريال"
+                      android:textColor="@color/colorBlack" />
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:id="@+id/layout_tow"
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/album_dp_40"
+                  android:layout_below="@id/layout_one"
+                  android:background="@color/colorRegister"
+                  android:orientation="horizontal">
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center_vertical"
+                      android:text="رسوم التوصيل             :"
+                      android:textColor="@color/colorBlack" />
+
+                  <TextView
+                      android:id="@+id/copleet_order_prepair_time"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center_vertical"
+                      android:gravity="end"
+                      android:text="20 ريال"
+                      android:textColor="@color/colorBlack" />
+
+
+              </LinearLayout>
+
+              <LinearLayout
+                  android:id="@+id/layout_three"
+                  android:layout_width="match_parent"
+                  android:layout_height="@dimen/album_dp_40"
+                  android:layout_below="@id/layout_tow"
+                  android:background="@color/colorNotes"
+                  android:orientation="horizontal">
+
+                  <TextView
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center_vertical"
+                      android:text="المبلغ الجمالي              :"
+                      android:textColor="@color/colorBlack" />
+
+                  <TextView
+                      android:id="@+id/complet_order_allTotal"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center_vertical"
+                      android:gravity="end"
+                      android:paddingEnd="@dimen/album_dp_6"
+                      android:text="40 ريال"
+                      android:textColor="@color/colorBlack" />
+
+              </LinearLayout>
+
+              <Button
+                  android:id="@+id/Complete_Order_btn_pay"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_below="@id/layout_three"
+                  android:layout_marginBottom="@dimen/album_dp_10"
+                  android:layout_marginTop="@dimen/album_dp_10"
+                  android:background="@drawable/ic_backgroun_yellow"
+                  android:text="اتمام الشراء"
+                  android:textColor="@color/colorBlack" />
+
+
+          </RelativeLayout>
+
+
+
+
+
+      </LinearLayout>
+
+
+
+  </ScrollView>
+
+</FrameLayout>

@@ -40,8 +40,8 @@
 
         <Button
             android:id="@+id/ptt_food_demand"
-            android:layout_width="325dp"
-            android:layout_height="35dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/album_dp_45"
             android:layout_marginStart="@dimen/album_dp_30"
             android:layout_marginEnd="@dimen/album_dp_30"
             android:layout_marginTop="@dimen/album_dp_50"
@@ -51,15 +51,16 @@
             android:textStyle="bold"
 
 
+
             />
 
         <Button
             android:id="@+id/ptt_food_sel"
-            android:layout_width="325dp"
-            android:layout_height="35dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/album_dp_45"
             android:layout_marginStart="@dimen/album_dp_30"
             android:layout_marginEnd="@dimen/album_dp_30"
-            android:layout_marginTop="@dimen/album_dp_10"
+            android:layout_marginTop="@dimen/album_dp_20"
             android:background="@color/colorPrimary"
             android:text="@string/ptt_sel_food"
             android:textSize="@dimen/album_dp_15"

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,8 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pro.sofranewapp.R;
-import com.example.pro.sofranewapp.data.ApiSofraModel;
-import com.example.pro.sofranewapp.data.RerofitSofraClint;
+import com.example.pro.sofranewapp.data.api.ApiSofraModel;
+import com.example.pro.sofranewapp.data.api.RerofitSofraClint;
 import com.example.pro.sofranewapp.data.model.resturant.accceptorderresturant.AccceptOrderResturant;
 import com.example.pro.sofranewapp.data.model.resturant.myorderresturant.MyOrderDatum;
 import com.example.pro.sofranewapp.ui.frgment.resturant.order.CompletOrderResturant;
@@ -101,7 +100,7 @@ public class OrderResturantAdapter extends RecyclerView.Adapter<OrderResturantAd
                                     public void onResponse(Call<AccceptOrderResturant> call, Response<AccceptOrderResturant> response) {
                                         if (response.body().getStatus() ==1){
                                             myOrderDatumList.remove(i);
-                                            Toast.makeText(activity, "Order Accept", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(activity, "CompleetOrder Accept", Toast.LENGTH_SHORT).show();
                                             replaceFrag(new CurrentOrderResturantFragment(),((FragmentActivity)context).getSupportFragmentManager()
                                                     ,R.id.id_fram_Home_nvigation1);
 
@@ -126,19 +125,19 @@ public class OrderResturantAdapter extends RecyclerView.Adapter<OrderResturantAd
                              @Override
                              public void onResponse(Call<AccceptOrderResturant> call, Response<AccceptOrderResturant> response) {
                                  if (response.body().getStatus() == 1){
-                                     Toast.makeText(activity, "Order Cancel", Toast.LENGTH_SHORT).show();
+                                     Toast.makeText(activity, "CompleetOrder Cancel", Toast.LENGTH_SHORT).show();
                                      myOrderDatumList.remove(i);
                                      notifyDataSetChanged();
 
                                  }else {
 
-                                     Toast.makeText(activity, "Order Not Cancel", Toast.LENGTH_SHORT).show();
+                                     Toast.makeText(activity, "CompleetOrder Not Cancel", Toast.LENGTH_SHORT).show();
                                  }
                              }
 
                              @Override
                              public void onFailure(Call<AccceptOrderResturant> call, Throwable t) {
-                                 Toast.makeText(activity, "Order Erorr", Toast.LENGTH_SHORT).show();
+                                 Toast.makeText(activity, "CompleetOrder Erorr", Toast.LENGTH_SHORT).show();
 
 
                              }
@@ -161,15 +160,15 @@ public class OrderResturantAdapter extends RecyclerView.Adapter<OrderResturantAd
                                 @Override
                                 public void onResponse(Call<AccceptOrderResturant> call, Response<AccceptOrderResturant> response) {
                                     if (response.body().getStatus() == 1){
-                                        Toast.makeText(activity, "Order Confirmd", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(activity, "CompleetOrder Confirmd", Toast.LENGTH_SHORT).show();
                                         replaceFrag(new CompletOrderResturant(),((FragmentActivity)context).getSupportFragmentManager()
                                                 ,R.id.id_fram_Home_nvigation1);
-                                    }else {Toast.makeText(activity, "Order Not Confirmd", Toast.LENGTH_SHORT).show();}
+                                    }else {Toast.makeText(activity, "CompleetOrder Not Confirmd", Toast.LENGTH_SHORT).show();}
                                 }
 
                                 @Override
                                 public void onFailure(Call<AccceptOrderResturant> call, Throwable t) {
-                                    Toast.makeText(activity, "Order Eroro", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(activity, "CompleetOrder Eroro", Toast.LENGTH_SHORT).show();
 
                                 }
                             });

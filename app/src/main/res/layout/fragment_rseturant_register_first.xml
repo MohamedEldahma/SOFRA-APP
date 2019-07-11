@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.frgment.resturant.ResturantRegisterFirstkFragment">
+    tools:context=".ui.frgment.resturant.loginResturant.ResturantRegisterFirstkFragment">
 
     <EditText
         android:id="@+id/name_resturant"
@@ -29,15 +29,15 @@
         android:orientation="horizontal">
         <Spinner
             android:id="@+id/resturant_spiner_city"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <TextView
-            android:id="@+id/resturant_text_spin_city"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/string_city"
-            android:padding="@dimen/album_dp_10" />
+        <!--<TextView-->
+            <!--android:id="@+id/resturant_text_spin_city"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:hint="@string/string_city"-->
+            <!--android:padding="@dimen/album_dp_10" />-->
     </LinearLayout>
 
     <LinearLayout
@@ -51,15 +51,15 @@
 
         <Spinner
             android:id="@+id/resturant_spiner_destrict"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <TextView
-            android:id="@+id/resturant_text_spin_destrict"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/string_adress"
-            android:padding="@dimen/album_dp_10" />
+        <!--<TextView-->
+            <!--android:id="@+id/resturant_text_spin_destrict"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:hint="@string/string_adress"-->
+            <!--android:padding="@dimen/album_dp_10" />-->
 
     </LinearLayout>
     <EditText
@@ -87,7 +87,6 @@
         android:hint="@string/string_password"
         android:inputType="textPassword"
         android:padding="@dimen/album_dp_10"
-        android:textAlignment="textEnd"
         />
     <EditText
         android:id="@+id/confirm_password_resturant"
@@ -100,8 +99,6 @@
         android:padding="@dimen/album_dp_10"
         android:hint="@string/string_confirmpassword"
         android:inputType="textPassword"
-        android:textAlignment="textEnd"
-
         />
     <Button
         android:id="@+id/register1_resturant"

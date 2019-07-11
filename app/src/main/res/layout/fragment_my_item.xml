@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/albumFontLight"
     android:orientation="vertical"
-    tools:context=".ui.frgment.resturant.MyItemFragment">
+    tools:context=".ui.frgment.resturant.item.MyItemFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rcycler_new_item"

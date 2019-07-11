@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.pro.sofranewapp.R;
-import com.example.pro.sofranewapp.helper.TabSupmitOrde;
+import com.example.pro.sofranewapp.adapter.TabSupmitOrde;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

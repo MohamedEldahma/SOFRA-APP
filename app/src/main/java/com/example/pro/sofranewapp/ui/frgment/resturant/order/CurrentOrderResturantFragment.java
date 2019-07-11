@@ -13,8 +13,8 @@ import android.widget.Toast;
 
 import com.example.pro.sofranewapp.R;
 import com.example.pro.sofranewapp.adapter.OrderResturantAdapter;
-import com.example.pro.sofranewapp.data.ApiSofraModel;
-import com.example.pro.sofranewapp.data.RerofitSofraClint;
+import com.example.pro.sofranewapp.data.api.ApiSofraModel;
+import com.example.pro.sofranewapp.data.api.RerofitSofraClint;
 import com.example.pro.sofranewapp.data.model.resturant.myorderresturant.MyOrderDatum;
 import com.example.pro.sofranewapp.data.model.resturant.myorderresturant.MyOrderResturant;
 
@@ -83,7 +83,7 @@ public class CurrentOrderResturantFragment extends Fragment {
                             }
 
                         } else {
-                            Toast.makeText(getActivity(), "No Order AddNewOfferData", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "No CompleetOrder AddNewOfferData", Toast.LENGTH_SHORT).show();
 
                         }
 

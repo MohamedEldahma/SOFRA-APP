@@ -30,9 +30,11 @@ public class ListRestItemsDatum {
     @SerializedName("photo")
     @Expose
     private String photo;
+
     @SerializedName("restaurant_id")
     @Expose
     private String restaurantId;
+
     @SerializedName("photo_url")
     @Expose
     private String photoUrl;
