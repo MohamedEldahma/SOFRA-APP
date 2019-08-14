@@ -15,7 +15,7 @@ public class Categories {
     private String msg;
     @SerializedName("data")
     @Expose
-    private List<Datum> data = null;
+    private List<CategoriesDatum> data = null;
 
     public Integer getStatus() {
         return status;
@@ -33,11 +33,11 @@ public class Categories {
         this.msg = msg;
     }
 
-    public List<Datum> getData() {
+    public List<CategoriesDatum> getData() {
         return data;
     }
 
-    public void setData(List<Datum> data) {
+    public void setData(List<CategoriesDatum> data) {
         this.data = data;
     }
 

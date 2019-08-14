@@ -6,7 +6,8 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity
 public class ItemFoodDataModel {
-    public ItemFoodDataModel(String notes ,  String photo_Url, String quantity, String price, String name, String restaurantId) {
+
+    public ItemFoodDataModel(String notes ,  String photo_Url, String quantity, String price, String name, String restaurantId , int itemId) {
 
         this.photo_Url = photo_Url;
         this.quantity = quantity;
@@ -14,7 +15,7 @@ public class ItemFoodDataModel {
         this.name = name;
         this.restaurantId = restaurantId;
         this.notes = notes;
-
+        this.itemId = itemId;
 
     }
 
@@ -25,6 +26,8 @@ public class ItemFoodDataModel {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
+
+    private int itemId;
 
     @ColumnInfo(name = "photo_Url")
     private String photo_Url;
@@ -45,15 +48,24 @@ public class ItemFoodDataModel {
     private String restaurantId;
 
 //    @ColumnInfo(name = "total")
-//    private String total;
+//    private int total;
 //
-//    public String getTotal() {
+//    public int getTotal() {
 //        return total;
 //    }
 //
-//    public void setTotal(String total) {
+//    public void setTotal(int total) {
 //        this.total = total;
 //    }
+
+
+    public int getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(int itemId) {
+        this.itemId = itemId;
+    }
 
     public String getNotes() {
         return notes;

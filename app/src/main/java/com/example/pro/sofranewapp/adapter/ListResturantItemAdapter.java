@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.pro.sofranewapp.R;
 import com.example.pro.sofranewapp.data.model.clint.listrestitems.ListRestItemsDatum;
+import com.example.pro.sofranewapp.helper.SharedPrefrancClass;
 import com.example.pro.sofranewapp.ui.frgment.general.DisplayFoodItemFragment;
 
 import java.util.List;

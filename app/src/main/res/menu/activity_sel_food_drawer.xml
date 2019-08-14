@@ -42,7 +42,7 @@
             android:icon="@drawable/ic_contact_us"
             android:title="@string/contactus" />
         <item
-            android:id="@+id/nav_signout"
+            android:id="@+id/nav_signout_sel"
             android:icon="@drawable/ic_sign_out"
             android:title="@string/signout" />
     </group>

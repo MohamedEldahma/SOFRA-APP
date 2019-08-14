@@ -16,6 +16,7 @@ import com.example.pro.sofranewapp.data.api.ApiSofraModel;
 import com.example.pro.sofranewapp.data.api.RerofitSofraClint;
 import com.example.pro.sofranewapp.data.model.clint.myorderclint.MyOrderClint;
 import com.example.pro.sofranewapp.data.model.clint.myorderclint.MyOrderDatum;
+import com.example.pro.sofranewapp.helper.SharedPrefrancClass;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +54,8 @@ public class CurentOrderFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_curent_order, container, false);
         unbinder = ButterKnife.bind(this, view);
         apiSofraModel = RerofitSofraClint.getClient().create(ApiSofraModel.class);
-        api_Token_clint = "HRbqKFSaq5ZpsOKITYoztpFZNylmzL9elnlAThxZSZ52QWqVBIj8Rdq7RhoB";
+//        api_Token_clint = "HRbqKFSaq5ZpsOKITYoztpFZNylmzL9elnlAThxZSZ52QWqVBIj8Rdq7RhoB";
+        api_Token_clint = SharedPrefrancClass.LoadStringData(getActivity(), "api_token_clint");
         myOrder();
         return view;
     }

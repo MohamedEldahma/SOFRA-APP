@@ -99,7 +99,7 @@ public class LoginResturantFragment extends Fragment {
                                     if (status == 1){
                                         Toast.makeText(getActivity(), "Login Tru", Toast.LENGTH_SHORT).show();
                                         String api_resturant_token = response.body().getData().getApiToken();
-                                        int  id_resturant = response.body().getData().getRestaurant().getId();
+                                        int  id_resturant = response.body().getData().getUser().getId();
                                         SharedPrefrancClass.SaveData(getActivity()," id_resturant",id_resturant);
                                         SharedPrefrancClass.SaveData(getActivity(),"api_resturant_token ",api_resturant_token);
 

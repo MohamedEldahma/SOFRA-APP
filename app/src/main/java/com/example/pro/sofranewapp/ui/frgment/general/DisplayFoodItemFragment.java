@@ -71,16 +71,13 @@ public class DisplayFoodItemFragment extends Fragment {
     public String getitem_wait;
     public String getitem_name;
     public String getitem_price;
-    public  int idItem ;
-    public String  id_Resturant;
-   private ListResturantItemAdapter listResturantItemAdapter;
-   private ItemFoodDataModel itemFoodDataModel;
+    public int idItem;
+    public static String id_Resturant;
+    private ListResturantItemAdapter listResturantItemAdapter;
+    private ItemFoodDataModel itemFoodDataModel;
     ApiSofraModel apiSofraModel;
     String api_tokent;
     int quantity = 1;
-
-
-
 
 
     public DisplayFoodItemFragment() {
@@ -94,12 +91,11 @@ public class DisplayFoodItemFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_display_food_item, container, false);
         unbinder = ButterKnife.bind(this, view);
-        getData(getitem_photo,getitem_name,getitem_desc,getitem_wait,getitem_price);
+        getData(getitem_photo, getitem_name, getitem_desc, getitem_wait, getitem_price);
         apiSofraModel = getClient().create(ApiSofraModel.class);
 //        api_tokent="HRbqKFSaq5ZpsOKITYoztpFZNylmzL9elnlAThxZSZ52QWqVBIj8Rdq7RhoB";
         api_tokent = SharedPrefrancClass.LoadStringData(getActivity(), "api_token_clint");
-        itemDisplayCount.setText( String.valueOf( quantity ) );
-
+        itemDisplayCount.setText(String.valueOf(quantity));
 
 
 //        if (ListResturantItemAdapter.itemFoodDataRoom !=null){
@@ -115,88 +111,76 @@ public class DisplayFoodItemFragment extends Fragment {
         return view;
     }
 
-    private void  getData(String getitem_photo,String getitem_name ,String getitem_desc,String  getitem_wait,String getitem_price  ){
+    private void getData(String getitem_photo, String getitem_name, String getitem_desc, String getitem_wait, String getitem_price) {
         Glide.with(getContext()).load(getitem_photo).into(imgItem);
         itemName.setText(getitem_name);
         itemDesc.setText(getitem_desc);
-        displayItemWait.setText("وقت التحضير: "+ getitem_wait);
+        displayItemWait.setText("وقت التحضير: " + getitem_wait);
         itemPrice.setText(" السعر\n" + getitem_price);
-        }
+    }
 
 
-        public void  addItemeCart(){
+    public void addItemeCart() {
 
 
-            itemFoodDataModel = new ItemFoodDataModel(itemSpecialOrder.getText().toString(),getitem_photo,
-                    itemDisplayCount.getText().toString(),getitem_price,
-                    itemName.getText().toString(),id_Resturant );
+        itemFoodDataModel = new ItemFoodDataModel(itemSpecialOrder.getText().toString(), getitem_photo,
+                itemDisplayCount.getText().toString(), getitem_price,
+                itemName.getText().toString(), id_Resturant, idItem);
+
+//                        List<ItemFoodDataModel> addAllData = roomItemDao.getAllData();
+//                         for (int i =0 ;i<addAllData.size();i++){
+        String resturantId = itemFoodDataModel.getRestaurantId();
+        if (resturantId.trim().equals(id_Resturant.trim())) {
 
 
-        final RoomItemDao roomItemDao = RoomManger.getInstance(getContext()).roomDao();
-
-            List<ItemFoodDataModel>addAllData = roomItemDao.getAllData();
-
-//            for (int i =0 ;i<addAllData.size();i++){
+            final RoomItemDao roomItemDao = RoomManger.getInstance(getContext()).roomDao();
 
 
-                String resturantId = itemFoodDataModel.getRestaurantId();
-                if (resturantId.trim().equals(id_Resturant.trim())){
-
-                    Executors.newSingleThreadExecutor().execute(new Runnable() {
-             @Override
-             public void run() {
+            Executors.newSingleThreadExecutor().execute(new Runnable() {
+                @Override
+                public void run() {
 
 
-                   roomItemDao.insertAll(itemFoodDataModel);
-                                       HelperMethod.replaceFrag(new BasketOrderFragment(),((FragmentActivity)getContext())
+                    roomItemDao.insertAll(itemFoodDataModel);
+                    HelperMethod.replaceFrag(new BasketOrderFragment(), ((FragmentActivity) getContext())
                             .getSupportFragmentManager(), R.id.id_fram_Home_nvigation1);
 
-               }
-              });
+
+                }
+            });
+
+        } else {
 
 
+            new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE)
+                    .setTitleText("انت تطلب من مطعم اخر ")
+                    .setContentText("هل تريد ان تحزف الطلبات الاخري ")
+                    .setConfirmText("نعم احزف ")
+                    .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                        @Override
+                        public void onClick(SweetAlertDialog sDialog) {
+                            sDialog
+                                    .setTitleText("Deleted!")
+                                    .setContentText("Your item  has been deleted!")
+                                    .setConfirmText("OK")
+                                    .setConfirmClickListener(null)
+                                    .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
+                            final RoomItemDao roomItemDao = RoomManger.getInstance(getContext()).roomDao();
+                            roomItemDao.deletAll();
+                            roomItemDao.insertAll(itemFoodDataModel);
+                            HelperMethod.replaceFrag(new BasketOrderFragment(), ((FragmentActivity) getContext())
+                                    .getSupportFragmentManager(), R.id.id_fram_Home_nvigation1);
 
-
-             }else {
-
-
-                   new SweetAlertDialog(getContext(), SweetAlertDialog.WARNING_TYPE)
-                       .setTitleText("انت تطلب من مطعم اخر ")
-                       .setContentText("هل تريد ان تحزف الطلبات الاخري ")
-                       .setConfirmText("نعم احزف ")
-                       .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
-                           @Override
-                           public void onClick(SweetAlertDialog sDialog) {
-                               sDialog
-                                       .setTitleText("Deleted!")
-                                       .setContentText("Your item  has been deleted!")
-                                       .setConfirmText("OK")
-                                       .setConfirmClickListener(null)
-                                       .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
-                               roomItemDao.deletAll();
-                               roomItemDao.insertAll(itemFoodDataModel);
-                               HelperMethod.replaceFrag(new BasketOrderFragment(),((FragmentActivity)getContext())
-                                       .getSupportFragmentManager(), R.id.id_fram_Home_nvigation1);
-
-                           }
-                       })
-                       .show();
-
-               }
-//                       }
-
-
-
-
-
-
+                        }
+                    })
+                    .show();
 
         }
 
 
+//        }
 
-
-
+    }
 
 
     @Override
@@ -204,15 +188,6 @@ public class DisplayFoodItemFragment extends Fragment {
         super.onDestroyView();
         unbinder.unbind();
     }
-
-
-
-
-
-
-
-
-
 
 
 //    public void savDataInCart() {
@@ -257,19 +232,19 @@ public class DisplayFoodItemFragment extends Fragment {
 //    }
 
 
-
-    public void  countQuantity(int quantirty){
+    public void countQuantity(int quantirty) {
         itemDisplayCount.setText(quantirty);
     }
+
     @OnClick({R.id.item_btn_mins, R.id.item_btn_plus, R.id.btn_addTo_cart})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.item_btn_mins:
 
                 if (quantity == 1) {
-                    Toast.makeText( getContext(), "Not Valid",Toast.LENGTH_SHORT ).show();
+                    Toast.makeText(getContext(), "Not Valid", Toast.LENGTH_SHORT).show();
                 } else {
-                    itemDisplayCount.setText( String.valueOf( --quantity ) );
+                    itemDisplayCount.setText(String.valueOf(--quantity));
                 }
 //                if (quantity ==0){
 //                    return;
@@ -280,7 +255,7 @@ public class DisplayFoodItemFragment extends Fragment {
 
                 break;
             case R.id.item_btn_plus:
-                itemDisplayCount.setText( String.valueOf( ++quantity) );
+                itemDisplayCount.setText(String.valueOf(++quantity));
 
 //                if (quantity ==50){
 //                    return;

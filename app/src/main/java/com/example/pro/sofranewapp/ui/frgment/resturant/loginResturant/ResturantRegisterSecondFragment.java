@@ -19,8 +19,8 @@ import com.example.pro.sofranewapp.R;
 import com.example.pro.sofranewapp.data.api.ApiSofraModel;
 import com.example.pro.sofranewapp.data.api.RerofitSofraClint;
 import com.example.pro.sofranewapp.data.model.resturant.categories.Categories;
-import com.example.pro.sofranewapp.data.model.resturant.categories.Datum;
-import com.example.pro.sofranewapp.data.model.resturant.registerrestaurant.RegisterRestaurant;
+import com.example.pro.sofranewapp.data.model.resturant.categories.CategoriesDatum;
+import com.example.pro.sofranewapp.data.model.resturant.registerresturant.RegisterResturant;
 import com.example.pro.sofranewapp.helper.HelperMethod;
 import com.example.pro.sofranewapp.helper.MultiSelectionSpinner;
 import com.example.pro.sofranewapp.helper.SharedPrefManager;
@@ -71,7 +71,7 @@ public class ResturantRegisterSecondFragment extends Fragment {
     Button registersecondResturantsecond;
     Unbinder unbinder;
     ApiSofraModel apiSofraModel;
-    private List<Datum> categoryData;
+    private List<CategoriesDatum> categoryData;
     private String name;
     private String email;
     private String password;
@@ -98,7 +98,7 @@ public class ResturantRegisterSecondFragment extends Fragment {
         password = getArguments().getString("res_Password");
         confirmPassword = getArguments().getString("res_ConfirmPassword");
         region_id = getArguments().getInt("startRegionId", 0);
-       getCatogries();
+        getCatogries();
         return view;
     }
 
@@ -119,7 +119,7 @@ public class ResturantRegisterSecondFragment extends Fragment {
         RequestBody reqPadyDelevaryFeed = convertStringToRequestBody(delivryfeeResturant.getText().toString());
         RequestBody reqPadyPhoneNumber = convertStringToRequestBody(phonenUmberResturant.getText().toString());
         RequestBody reqPadyPhoneWhatsup = convertStringToRequestBody(phoneWhatsupoRegiste.getText().toString());
-        MultipartBody.Part reqPadyaddimagPart =convertFileToMultipart(albumFiles.get(0).getPath(),"Photo");
+        MultipartBody.Part reqPadyaddimagPart = convertFileToMultipart(albumFiles.get(0).getPath(), "photo");
         List<String> selectedStrings = restTypesSp.getSelectedStrings();
         List<String> listselected = new ArrayList<>();
 
@@ -135,31 +135,31 @@ public class ResturantRegisterSecondFragment extends Fragment {
             Log.d(TAG, "list: " + requestBody_listCatogries.toArray().toString());
         }
 
-        apiSofraModel.addRegisterResturant(reqPadyName,reqPadyEmail,reqPadyPassword
-                                                  ,reqPadyConfirmPassword,reqPadyRegionId,reqPadyMinimuOrder
-                                                  ,reqPadyDelevaryFeed, requestBody_listCatogries, reqPadyPhoneNumber
-                                                  , reqPadyPhoneWhatsup, reqPadyaddimagPart, convertStringToRequestBody("open"))
-                   .enqueue(new Callback<RegisterRestaurant>() {
-                       @Override
-                       public void onResponse(Call<RegisterRestaurant> call, Response<RegisterRestaurant> response) {
-                           if (response.body().getStatus() == 1) {
-                               Toast.makeText(getContext(), " Input AddItemData tru" , Toast.LENGTH_SHORT).show();
-                               String apiToken = response.body().getData().getApiToken();
-                               sharedPrefManager.setKeyOrderSell(apiToken);
-                               HomeSelFragment homeSelFragment =new HomeSelFragment();
-                               HelperMethod.replaceFrag(homeSelFragment,getFragmentManager(),R.id.id_fram_Home_nvigation1);
+        apiSofraModel.addRegisterResturant(reqPadyName, reqPadyEmail, reqPadyPassword
+                , reqPadyConfirmPassword, reqPadyRegionId, reqPadyMinimuOrder
+                , reqPadyDelevaryFeed, requestBody_listCatogries, reqPadyPhoneNumber
+                , reqPadyPhoneWhatsup, reqPadyaddimagPart, convertStringToRequestBody("open"))
+                .enqueue(new Callback<RegisterResturant>() {
+                    @Override
+                    public void onResponse(Call<RegisterResturant> call, Response<RegisterResturant> response) {
+                           String msg = response.body().getMsg();
+                        if (response.body().getStatus() == 1) {
+                            Toast.makeText(getContext(), " "+msg, Toast.LENGTH_SHORT).show();
 
-                           }else {
-                               Toast.makeText(getContext(), "Not Input AddItemData", Toast.LENGTH_SHORT).show();
-                           }
-                       }
+                            HomeSelFragment homeSelFragment = new HomeSelFragment();
+                            HelperMethod.replaceFrag(homeSelFragment, getFragmentManager(), R.id.id_fram_Home_nvigation1);
 
-                       @Override
-                       public void onFailure(Call<RegisterRestaurant> call, Throwable t) {
-                           Toast.makeText(getActivity(), "Register Erorr", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getContext(), ""+msg, Toast.LENGTH_SHORT).show();
+                        }
+                    }
 
-                       }
-                   });
+                    @Override
+                    public void onFailure(Call<RegisterResturant> call, Throwable t) {
+                        Toast.makeText(getActivity(), "Register Erorr", Toast.LENGTH_SHORT).show();
+
+                    }
+                });
 
 
     }
@@ -172,7 +172,7 @@ public class ResturantRegisterSecondFragment extends Fragment {
                     public void onResponse(Call<Categories> call, Response<Categories> response) {
                         long status = response.body().getStatus();
                         if (status == 1) {
-                            Toast.makeText(getContext(), "Cetegory Tru"+response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Cetegory Tru" + response.body().getMsg(), Toast.LENGTH_SHORT).show();
                             categoryData = response.body().getData();
                             List<String> nameList = new ArrayList<>();
                             final List<Integer> idList = new ArrayList<>();
@@ -188,7 +188,6 @@ public class ResturantRegisterSecondFragment extends Fragment {
 
                         } else {
                             Toast.makeText(getContext(), "now data", Toast.LENGTH_SHORT).show();
-
 
 
                         }
@@ -215,9 +214,9 @@ public class ResturantRegisterSecondFragment extends Fragment {
         }
     }
 
-    private  void  getAlbumFill(){
+    private void getAlbumFill() {
 
-        Action<ArrayList<AlbumFile>> action =new Action<ArrayList<AlbumFile>>() {
+        Action<ArrayList<AlbumFile>> action = new Action<ArrayList<AlbumFile>>() {
             @Override
             public void onAction(@NonNull ArrayList<AlbumFile> result) {
                 albumFiles.clear();
@@ -229,7 +228,7 @@ public class ResturantRegisterSecondFragment extends Fragment {
 
             }
         };
-       openAlbum(3,getActivity(),albumFiles,action);
+        openAlbum(3, getActivity(), albumFiles, action);
 
     }
 }

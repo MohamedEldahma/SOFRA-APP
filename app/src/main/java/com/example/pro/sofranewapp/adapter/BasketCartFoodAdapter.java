@@ -27,23 +27,25 @@ import butterknife.ButterKnife;
 
 public class BasketCartFoodAdapter extends RecyclerView.Adapter<BasketCartFoodAdapter.ViewHolder> {
 
-
+    public static double totalAll  = 0;
     private Context context;
     private Activity activity;
     List<ItemFoodDataModel> dataCart;
-    TextView totalSum;
-   private DisplayFoodItemFragment displayFoodItem;
-    public static double sum;
-    private int quentity;
-    public double totalPrice;
-    private double price;
-    public static int totalquentity;
-    public static String deliverycost;
+    TextView totalTv;
+//   private DisplayFoodItemFragment displayFoodItem;
+//    public static double sum;
+//    private int quentity;
+//    public double totalPrice;
+//    private double price;
+//    public static int totalquentity;
+//    public static String deliverycost;
 
-    public BasketCartFoodAdapter(Context context, Activity activity, List<ItemFoodDataModel> data) {
+    public BasketCartFoodAdapter(Context context, Activity activity, List<ItemFoodDataModel> data,TextView totalTv) {
         this.context = context;
         this.activity = activity;
         this.dataCart = data;
+        this.totalTv = totalTv;
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -61,21 +63,38 @@ public class BasketCartFoodAdapter extends RecyclerView.Adapter<BasketCartFoodAd
         viewHolder.RoomName.setText(dataCart.get(position).getName());
         viewHolder.RoomTvPrice.setText(dataCart.get(position).getPrice());
         viewHolder.RoomQunitityNum.setText(dataCart.get(position).getQuantity());
-         price = Double.parseDouble(dataCart.get(position).getPrice());
-         quentity = Integer.parseInt(dataCart.get(position).getQuantity());
-
-        viewHolder.RoomTotel.setText(calculationTotalPrice(dataCart.get(position).getQuantity(),dataCart.get(position).getPrice()));
-
-
-
-
+        final double price =  Double.parseDouble(dataCart.get(position).getPrice());
+        int counter = Integer.parseInt(dataCart.get(position).getQuantity());
+        String total = String.valueOf(price * counter);
+        viewHolder.RoomTotel.setText(""+total);
+        totalAll = Float.parseFloat(total)+ totalAll;
+        totalTv.setText(""+totalAll);
+//        viewHolder.RoomTotel.setText(calculationTotalPrice(dataCart.get(position).getQuantity(),dataCart.get(position).getPrice()));
         viewHolder.RoomBtnPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                quentity = quentity +1;
-                viewHolder.RoomQunitityNum.setText(""+quentity);
-                totalPrice = price*quentity;
-                viewHolder.RoomTotel.setText(""+totalPrice);
+                int count = Integer.parseInt(dataCart.get(position).getQuantity());
+                dataCart.get(position).setQuantity(String.valueOf(++count));
+                final int finalCount = count;
+                final RoomItemDao roomItemDao = RoomManger.getInstance(context).roomDao();
+                Executors.newSingleThreadExecutor().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        roomItemDao.update(dataCart.get(position));
+
+                    }
+                });
+
+                viewHolder.RoomQunitityNum.setText(dataCart.get(position).getQuantity());
+                String totalPlus = String.valueOf(price * finalCount);
+                viewHolder.RoomTotel.setText("" + totalPlus );
+                totalAll = (price)+ totalAll;
+                totalTv.setText(""+totalAll);
+
+//                quentity = quentity +1;
+//                viewHolder.RoomQunitityNum.setText(""+quentity);
+//                totalPrice = price*quentity;
+//                viewHolder.RoomTotel.setText(""+totalPrice);
 //                sum = sum +total;
 
             }
@@ -84,14 +103,34 @@ public class BasketCartFoodAdapter extends RecyclerView.Adapter<BasketCartFoodAd
         viewHolder.RoomBtnMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (quentity<=1){
-                    viewHolder.RoomQunitityNum.setText(""+quentity);
-                }else if (quentity>=1){
-                    quentity = quentity-1;
-                    viewHolder.RoomQunitityNum.setText(""+quentity);
-                    totalPrice=price*quentity;
-                    viewHolder.RoomTotel.setText("" +totalPrice);
-                }
+
+
+                int count = Integer.parseInt(dataCart.get(position).getQuantity());
+                dataCart.get(position).setQuantity(String.valueOf(--count));
+                final RoomItemDao roomItemDao = RoomManger.getInstance(context).roomDao();
+                final int finalCount = count;
+                Executors.newSingleThreadExecutor().execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        roomItemDao.update(dataCart.get(position));
+
+                    }
+                });
+
+                viewHolder.RoomQunitityNum.setText(dataCart.get(position).getQuantity());
+                String totalPlus = String.valueOf(price * finalCount);
+                viewHolder.RoomTotel.setText("" + totalPlus );
+                totalAll = (price)+ totalAll;
+                totalTv.setText(""+totalAll);
+
+//                if (quentity<=1){
+//                    viewHolder.RoomQunitityNum.setText(""+quentity);
+//                }else if (quentity>=1){
+//                    quentity = quentity-1;
+//                    viewHolder.RoomQunitityNum.setText(""+quentity);
+//                    totalPrice=price*quentity;
+//                    viewHolder.RoomTotel.setText("" +totalPrice);
+//                }
             }
         });
         viewHolder.RoomDelete.setOnClickListener(new View.OnClickListener() {
@@ -115,13 +154,13 @@ public class BasketCartFoodAdapter extends RecyclerView.Adapter<BasketCartFoodAd
     }
 
 
-    private String calculationTotalPrice(String orderQuantity, String orderPrice) {
-         quentity = Integer.valueOf(orderQuantity);
-        price = Double.valueOf(orderPrice);
-         totalPrice = price * quentity;
-
-        return String.valueOf(totalPrice);
-    }
+//    private String calculationTotalPrice(String orderQuantity, String orderPrice) {
+//         quentity = Integer.valueOf(orderQuantity);
+//        price = Double.valueOf(orderPrice);
+//         totalPrice = price * quentity;
+//
+//        return String.valueOf(totalPrice);
+//    }
 
 
     @Override

@@ -4,8 +4,6 @@ package com.example.pro.sofranewapp.data.model.general.regions;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
 public class Regions {
 
     @SerializedName("status")
@@ -16,7 +14,7 @@ public class Regions {
     private String msg;
     @SerializedName("data")
     @Expose
-    private RegionsData regionsData;
+    private RegionsData data;
 
     public Integer getStatus() {
         return status;
@@ -34,12 +32,12 @@ public class Regions {
         this.msg = msg;
     }
 
-    public RegionsData getRegionsData() {
-        return regionsData;
+    public RegionsData getData() {
+        return data;
     }
 
     public void setData(RegionsData data) {
-        this.regionsData = data;
+        this.data = data;
     }
 
 }

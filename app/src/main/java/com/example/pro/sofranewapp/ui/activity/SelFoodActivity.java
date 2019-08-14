@@ -36,6 +36,7 @@ public class SelFoodActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         api_tokenResturant = SharedPrefrancClass.LoadStringData(SelFoodActivity.this,"api_tokenResturant");
+        titel =(TextView)findViewById(R.id.title_toolParr);
 
 
 
@@ -110,8 +111,7 @@ public class SelFoodActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_main) {
-            Fragment fragment =new HomeSelFragment();
-            addFragment(fragment);
+            replaceFrag(new LoginResturantFragment(),getSupportFragmentManager(),R.id.id_fram_Home_nvigation1);
             titel.setText("الصفحه الرئيسيه");
 
             // Handle the camera action
@@ -123,7 +123,7 @@ public class SelFoodActivity extends AppCompatActivity
         } else if (id == R.id.nav_alerts) {
             SubmitOrderResturantFragment submitOrderResturantFragment = new SubmitOrderResturantFragment();
             replaceFrag(submitOrderResturantFragment,getSupportFragmentManager(),R.id.id_fram_Home_nvigation1);
-            titel.setText("التنبيهات");
+            titel.setText("الطلبات المقدمه");
 
         } else if (id == R.id.nav_new_offer) {
             MyOffer myOffer = new MyOffer();
@@ -142,7 +142,7 @@ public class SelFoodActivity extends AppCompatActivity
         }else if (id == R.id.nav_contacuus) {
             titel.setText("تواصل معنا");
 
-        }else if (id == R.id.nav_signout) {
+        }else if (id == R.id.nav_signout_sel) {
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout_sel);

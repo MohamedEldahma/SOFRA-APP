@@ -93,7 +93,7 @@ public class ResturantRegisterFirstkFragment extends Fragment {
         apiSofraModel.getCities().enqueue(new Callback<Cities>() {
             @Override
             public void onResponse(Call<Cities> call, Response<Cities> response) {
-                List<CitiesDatum> citiesDatumList =response.body().getCitiesDatum().getData() ;
+                List<CitiesDatum> citiesDatumList =response.body().getData().getData() ;
                 ArrayList<String> city= new ArrayList<>();
                 final ArrayList<Integer> idcity = new ArrayList<>();
                 city.add(getString(R.string.string_city));
@@ -146,7 +146,7 @@ public class ResturantRegisterFirstkFragment extends Fragment {
                 .enqueue(new Callback<Regions>() {
                     @Override
                     public void onResponse(Call<Regions> call, Response<Regions> response) {
-                        List<RegionsDatum> regionsDatumList = response.body().getRegionsData().getData();
+                        List<RegionsDatum> regionsDatumList = response.body().getData().getData();
                         ArrayList<String> region = new ArrayList<>();
                         final ArrayList<Integer> idRegion = new ArrayList<>();
 
@@ -210,7 +210,7 @@ public class ResturantRegisterFirstkFragment extends Fragment {
 
         ResturantRegisterSecondFragment resturantRegisterSecondFragment =new ResturantRegisterSecondFragment();
         resturantRegisterSecondFragment.setArguments(bundle);
-      HelperMethod.replaceFrag(resturantRegisterSecondFragment,getFragmentManager(),R.id.id_fram_Home_nvigation1);
+       HelperMethod.replaceFrag(resturantRegisterSecondFragment,getFragmentManager(),R.id.id_fram_Home_nvigation1);
         Toast.makeText(getContext(), "Tru", Toast.LENGTH_SHORT).show();
 
 

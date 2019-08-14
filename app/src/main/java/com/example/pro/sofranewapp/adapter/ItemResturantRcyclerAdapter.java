@@ -92,8 +92,8 @@ public class ItemResturantRcyclerAdapter extends RecyclerView.Adapter<ItemRestur
             public void onClick(View v) {
                 InformationResturantViewPAgerFragment informationResturantViewPAgerFragment = new InformationResturantViewPAgerFragment();
                 SharedPrefrancClass.SaveData(activity,"id_Resturant",restaurantsList.get(postion).getId());
-                replaceFrag(new InformationResturantViewPAgerFragment(),
-                        ((FragmentActivity)context).getSupportFragmentManager(),R.id.id_fram_Home_nvigation1);
+                SharedPrefrancClass.SaveData(activity,"Item_Delivary_Cost",delevryCost);
+                replaceFrag(new InformationResturantViewPAgerFragment(), ((FragmentActivity)context).getSupportFragmentManager(),R.id.id_fram_Home_nvigation1);
 
 
             }

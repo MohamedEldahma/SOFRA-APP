@@ -14,7 +14,7 @@ public class RestaurantLogin {
     private String msg;
     @SerializedName("data")
     @Expose
-    private RestLoginData data;
+    private RestaurantData data;
 
     public Integer getStatus() {
         return status;
@@ -32,11 +32,11 @@ public class RestaurantLogin {
         this.msg = msg;
     }
 
-    public RestLoginData getData() {
+    public RestaurantData getData() {
         return data;
     }
 
-    public void setData(RestLoginData data) {
+    public void setData(RestaurantData data) {
         this.data = data;
     }
 

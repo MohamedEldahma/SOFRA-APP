@@ -15,16 +15,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.pro.sofranewapp.R;
+import com.example.pro.sofranewapp.adapter.BasketCartFoodAdapter;
 import com.example.pro.sofranewapp.data.api.ApiSofraModel;
 import com.example.pro.sofranewapp.data.api.RerofitSofraClint;
 import com.example.pro.sofranewapp.data.local.dataroom.ItemFoodDataModel;
-import com.example.pro.sofranewapp.data.model.clint.compleetneworderclint.CompleetNeworderClint;
+import com.example.pro.sofranewapp.data.local.dataroom.RoomItemDao;
+import com.example.pro.sofranewapp.data.local.dataroom.RoomManger;
+import com.example.pro.sofranewapp.data.model.clint.completcrderclint.CompletOrderClint;
 import com.example.pro.sofranewapp.data.model.general.paymentmethods.PayMentDatum;
 import com.example.pro.sofranewapp.helper.HelperMethod;
 import com.example.pro.sofranewapp.helper.SharedPrefrancClass;
+import com.example.pro.sofranewapp.ui.frgment.clintorder.notificationclint.NotifcationOrderClint;
+import com.example.pro.sofranewapp.ui.frgment.general.DisplayFoodItemFragment;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,6 +41,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.example.pro.sofranewapp.adapter.BasketCartFoodAdapter.totalAll;
+import static com.example.pro.sofranewapp.ui.frgment.general.DisplayFoodItemFragment.id_Resturant;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -42,7 +51,6 @@ public class CompleetOrderClint extends Fragment {
 
 
     Unbinder unbinder;
-    ApiSofraModel apiSofraModel;
     @BindView(R.id.text_not)
     TextView textNot;
     @BindView(R.id.text_add_not)
@@ -63,8 +71,8 @@ public class CompleetOrderClint extends Fragment {
     TextView copleetOrderTotal;
     @BindView(R.id.layout_one)
     LinearLayout layoutOne;
-    @BindView(R.id.copleet_order_prepair_time)
-    TextView copleetOrderPrepairTime;
+    @BindView(R.id.copleet_order_DelivaryCost)
+    TextView copleetOrderDelivaryCost;
     @BindView(R.id.layout_tow)
     LinearLayout layoutTow;
     @BindView(R.id.complet_order_allTotal)
@@ -73,19 +81,21 @@ public class CompleetOrderClint extends Fragment {
     LinearLayout layoutThree;
     @BindView(R.id.Complete_Order_btn_pay)
     Button CompleteOrderBtnPay;
-    private String api_token_clint;
+    ApiSofraModel apiSofraModel;
 
+    private String api_token_clint;
     private int payment_id;
-    public String name_clint ;
+    public String name_clint;
     private String phone_clint;
     public String address_clint;
     private List<Integer> itemId = new ArrayList<>();
-    private List<Integer> listOFQuantities = new ArrayList<>();
-    private List<String> listOfNotes = new ArrayList<>();
+    private List<String> itemNotes = new ArrayList<>();
+    private List<Integer> quantities = new ArrayList<>();
+    //    String itemNotes ;
     boolean chicked = false;
-    List<PayMentDatum> methoPaymentDtum = new ArrayList<>();
-    String restaurantId;
-
+    int restaurantId;
+    String delivaryCost;
+    String nots;
 
 
     public CompleetOrderClint() {
@@ -99,12 +109,16 @@ public class CompleetOrderClint extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_compleet_order_clint, container, false);
         unbinder = ButterKnife.bind(this, view);
-//        getPayment();
-        api_token_clint = SharedPrefrancClass.LoadStringData(getActivity(), "api_token_clint");
+        apiSofraModel = RerofitSofraClint.getClient().create(ApiSofraModel.class);
+        addNewOrder();
+//        api_token_clint = SharedPrefrancClass.LoadStringData(getActivity(), "api_token_clint");
+        api_token_clint = "K1X6AzRlJFeVbGnHwGYsdCu0ETP1BqYC7DpMTZ3zLvKgU5feHMvsEEnKTpzh";
         name_clint = SharedPrefrancClass.LoadStringData(getActivity(), "name_clint");
         phone_clint = SharedPrefrancClass.LoadStringData(getActivity(), "phone_clint");
         address_clint = SharedPrefrancClass.LoadStringData(getActivity(), "address_clint");
-        apiSofraModel = RerofitSofraClint.getClient().create(ApiSofraModel.class);
+        delivaryCost = SharedPrefrancClass.LoadStringData(getActivity(), "Item_Delivary_Cost");
+        restaurantId = SharedPrefrancClass.LoadIntegerData(getActivity(), "id_Resturant");
+
 
         casheOnDelevary.setText("نقدا عند الاستلام");
         interntOnDelevary.setText("شبكه عند الاستلام");
@@ -172,60 +186,65 @@ public class CompleetOrderClint extends Fragment {
         unbinder.unbind();
     }
 
+    private void addNewOrder() {
+
+        final RoomItemDao roomItemDao = RoomManger.getInstance(getContext()).roomDao();
+        Executors.newSingleThreadExecutor().execute(new Runnable() {
+            @Override
+            public void run() {
+                List<ItemFoodDataModel> modelList = roomItemDao.getAllData();
+                for (ItemFoodDataModel itemFoodData : modelList) {
+                    copleetOrderTotal.setText("" + totalAll);
+                    copleetOrderDelivaryCost.setText(delivaryCost);
+                    double delivaryCost_Compleet = Double.parseDouble(delivaryCost);
+                    double total = (totalAll + delivaryCost_Compleet);
+                    completOrderAllTotal.setText(total + "");
+
+                    itemId.add(itemFoodData.getItemId());
+                    itemNotes.add(itemFoodData.getNotes());
+                    quantities.add(Integer.valueOf(itemFoodData.getQuantity()));
+                }
+
+            }
+        });
+
+
+    }
+
 
     @OnClick(R.id.Complete_Order_btn_pay)
-    public void onViewClicked() {orderCompleet();}
+
+    public void onViewClicked() {
+        orderCompleet();
+    }
 
 
+    public void orderCompleet() {
 
-    public void orderCompleet(){
-//        if (casheOnDelevary.isChecked()) {
-//            payment_id = 1 ;}
-//        if (casheOnDelevary.isChecked()) {
-//            payment_id = 2 ;}
-
-
-        ItemFoodDataModel modelCompleet = new ItemFoodDataModel();
-        for (int i = 0; i < itemId.size(); i++) {
-            itemId.add(modelCompleet.getId());
-            listOfNotes.add(modelCompleet.getNotes());
-            listOFQuantities.add(Integer.parseInt(modelCompleet.getQuantity()));
-        }
-
-
-        if (chicked == false) {
-
-            SweetAlertDialog dialog = new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE);
-            dialog.setTitleText("you have check on way to pay");
-            dialog.show();
-        }
-
-         restaurantId = modelCompleet.getRestaurantId();
-        apiSofraModel.compleetOrderClint(restaurantId, textAddNot.getText().toString(), addAdressDiliver.getText().toString(),
-                payment_id, phone_clint, name_clint,
-                api_token_clint, itemId, listOFQuantities, listOfNotes).enqueue(new Callback<CompleetNeworderClint>() {
+        nots = textAddNot.getText().toString();
+        apiSofraModel.compleetOrderClint(restaurantId, nots, addAdressDiliver.getText().toString(), payment_id, phone_clint, name_clint,
+                api_token_clint, itemId, quantities, itemNotes).enqueue(new Callback<CompletOrderClint>() {
             @Override
-            public void onResponse(Call<CompleetNeworderClint> call, Response<CompleetNeworderClint> response) {
+            public void onResponse(Call<CompletOrderClint> call, Response<CompletOrderClint> response) {
                 String msg = response.body().getMsg();
                 if (response.body().getStatus() == 1) {
+                    HelperMethod.replaceFrag(new NotifcationOrderClint(), getFragmentManager(), R.id.id_fram_Home_nvigation1);
 
-
-                    HelperMethod.replaceFrag(new BasketOrderFragment(),getFragmentManager(),R.id.id_fram_Home_nvigation1);
-
-                    SweetAlertDialog dialog = new SweetAlertDialog(getContext(),SweetAlertDialog.SUCCESS_TYPE);
+                    SweetAlertDialog dialog = new SweetAlertDialog(getContext(), SweetAlertDialog.SUCCESS_TYPE);
                     dialog.setTitleText(msg);
                     dialog.show();
-                }else {
+                } else {
+                    Toast.makeText(getContext(), "false", Toast.LENGTH_SHORT).show();
 
-                    SweetAlertDialog dialog = new SweetAlertDialog(getContext(),SweetAlertDialog.ERROR_TYPE);
+                    SweetAlertDialog dialog = new SweetAlertDialog(getContext(), SweetAlertDialog.ERROR_TYPE);
                     dialog.setTitleText(msg);
                     dialog.show();
                 }
             }
 
             @Override
-            public void onFailure(Call<CompleetNeworderClint> call, Throwable t) {
-                Toast.makeText(getContext(), " Order Find Erorrr", Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<CompletOrderClint> call, Throwable t) {
+                Toast.makeText(getContext(), " CompletOrder Find Erorrr", Toast.LENGTH_SHORT).show();
             }
         });
 

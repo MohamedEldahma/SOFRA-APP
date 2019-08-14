@@ -4,8 +4,6 @@ package com.example.pro.sofranewapp.data.model.general.cities;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
 public class Cities {
 
     @SerializedName("status")
@@ -16,7 +14,7 @@ public class Cities {
     private String msg;
     @SerializedName("data")
     @Expose
-    private CitiesData citiesData;
+    private CitiesData data;
 
     public Integer getStatus() {
         return status;
@@ -34,12 +32,12 @@ public class Cities {
         this.msg = msg;
     }
 
-    public CitiesData getCitiesDatum() {
-        return citiesData ;
+    public CitiesData getData() {
+        return data;
     }
 
     public void setData(CitiesData data) {
-        this.citiesData = data;
+        this.data = data;
     }
 
 }

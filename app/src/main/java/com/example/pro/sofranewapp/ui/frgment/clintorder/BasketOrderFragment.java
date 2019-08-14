@@ -107,7 +107,7 @@ public class BasketOrderFragment extends Fragment {
                 itemFoodDataModels = roomItemDao.getAllData();
 
 
-                cartFoodAdapter = new BasketCartFoodAdapter(getContext(), getActivity(), itemFoodDataModels);
+                cartFoodAdapter = new BasketCartFoodAdapter(getContext(), getActivity(), itemFoodDataModels,sumText);
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

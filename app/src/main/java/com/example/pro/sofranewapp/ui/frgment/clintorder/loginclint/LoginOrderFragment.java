@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,15 +19,21 @@ import com.example.pro.sofranewapp.data.api.ApiSofraModel;
 import com.example.pro.sofranewapp.data.api.RerofitSofraClint;
 import com.example.pro.sofranewapp.data.model.clint.loginClint.LoginClint;
 import com.example.pro.sofranewapp.data.model.clint.loginClint.LoginRegion;
+import com.example.pro.sofranewapp.data.model.clint.pushregistertokenclient.PushRegisterTokenClient;
 import com.example.pro.sofranewapp.helper.SharedPrefrancClass;
+import com.example.pro.sofranewapp.ui.activity.OrderFoodActivity;
 import com.example.pro.sofranewapp.ui.frgment.clintorder.HomeOrderFragment;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 import retrofit2.Call;
+import retrofit2.Callback;
 import retrofit2.Response;
+
+import static android.support.constraint.Constraints.TAG;
 
 
 /**
@@ -57,7 +64,7 @@ public class LoginOrderFragment extends Fragment {
     LoginRegion region;
     private int idCity ;
     private String pass;
-
+    String refreshedToken;
 
     Unbinder unbinder;
 
@@ -73,6 +80,11 @@ public class LoginOrderFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         unbinder = ButterKnife.bind(this, view);
         apiSofraModel= RerofitSofraClint.getClient().create(ApiSofraModel.class);
+//        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+//        Log.d(TAG,"onCreat,"+refreshedToken);
+        idEditEmail.setText(email);
+        idEditPassword.setText(pass);
+
         return view;
     }
 
@@ -99,7 +111,7 @@ public class LoginOrderFragment extends Fragment {
                     public void onResponse(Call<LoginClint> call, Response<LoginClint> response) {
 
                         if (response.body().getStatus()==1 ){
-                            Toast.makeText(getActivity(), "User Login Tru", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "RestaurantUser Login Tru", Toast.LENGTH_SHORT).show();
 //                            SharedPrefManagerClient.getInstance(getContext()).setClientApiToken(response.body().getData().getApiToken());
 //                            SharedPrefManagerClient.getInstance(getContext()).saveClientLoginCity
 //                                    (response.body().getData().getUser().getRegion().getCity().getId(),
@@ -111,6 +123,7 @@ public class LoginOrderFragment extends Fragment {
                             email = response.body().getData().getClient().getEmail();
                             region = response.body().getData().getClient().getRegion();
                             idCity = region.getCity().getId();
+
 
                             
 //                            // save data to SharedPreference
@@ -134,7 +147,7 @@ public class LoginOrderFragment extends Fragment {
 
                     @Override
                     public void onFailure(Call<LoginClint> call, Throwable t) {
-                        Toast.makeText(getActivity(),"User Login Error",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),"RestaurantUser Login Error",Toast.LENGTH_SHORT).show();
 
                     }
                 });
@@ -142,6 +155,9 @@ public class LoginOrderFragment extends Fragment {
 
 
     }
+
+
+
 
     @OnClick({R.id.ptt_login, R.id.ptt_text_forget_password, R.id.ptt_new_acount})
     public void onViewClicked(View view) {
@@ -158,6 +174,9 @@ public class LoginOrderFragment extends Fragment {
                 break;
         }
     }
+
+
+
 
 
     public void selectFragment(Fragment fragment){
