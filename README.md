@@ -6,7 +6,7 @@ Tools Used:-
 Restful API Sofra-
 PostMan-
 Retrofit-
-PogoScema-
+pojo schema-
 MVC-
 Java-
 ready user interface- 
