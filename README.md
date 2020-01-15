@@ -1,5 +1,5 @@
 # SOFRA-APP
-Order Food (New Desgin-New Ui-New API )
+Order Food 
 Application to order food from restaurants by adding restaurants to the application
 
 Tools Used:-
